@@ -394,9 +394,10 @@ const localBusinessLd = {
 
   /* ===== Footer ===== */
   .site-footer {
-    background-color: var(--color-text);
-    color: rgba(255,255,255,0.85);
+    background-color: var(--color-cream);
+    color: var(--color-text);
     padding-block: var(--space-16) var(--space-8);
+    border-top: 3px solid var(--color-primary);
   }
 
   .footer-grid {
@@ -404,7 +405,7 @@ const localBusinessLd = {
     grid-template-columns: 1.4fr 1fr 1fr;
     gap: var(--space-12);
     padding-bottom: var(--space-12);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .footer-logo {
@@ -417,20 +418,19 @@ const localBusinessLd = {
   .footer-logo img {
     width: auto;
     height: 96px;
-    filter: brightness(10);
     object-fit: contain;
   }
 
   .footer-tagline {
     font-family: var(--font-display);
     font-style: italic;
-    color: var(--color-gold);
+    color: var(--color-primary);
     margin-bottom: var(--space-3);
     font-size: var(--text-sm);
   }
   .footer-desc {
     font-size: var(--text-sm);
-    color: rgba(255,255,255,0.6);
+    color: var(--color-text-muted);
     line-height: 1.7;
     max-width: 36ch;
     margin-bottom: var(--space-4);
@@ -443,8 +443,8 @@ const localBusinessLd = {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.06);
+    color: var(--color-text-muted);
     transition: background var(--transition-fast), color var(--transition-fast);
   }
   .footer-social:hover {
@@ -456,7 +456,7 @@ const localBusinessLd = {
     font-family: var(--font-display);
     font-size: var(--text-base);
     font-weight: 600;
-    color: #FFFFFF;
+    color: var(--color-text);
     margin-bottom: var(--space-6);
   }
 
@@ -467,23 +467,23 @@ const localBusinessLd = {
   }
   .footer-links a {
     font-size: var(--text-sm);
-    color: rgba(255,255,255,0.6);
+    color: var(--color-text-muted);
     text-decoration: none;
     transition: color var(--transition-fast);
   }
-  .footer-links a:hover { color: #FFFFFF; }
+  .footer-links a:hover { color: var(--color-primary); }
 
   .footer-contact-list li {
     display: flex;
     align-items: flex-start;
     gap: var(--space-2);
     font-size: var(--text-sm);
-    color: rgba(255,255,255,0.6);
+    color: var(--color-text-muted);
   }
   .footer-contact-list svg {
     flex-shrink: 0;
     margin-top: 2px;
-    stroke: var(--color-gold);
+    stroke: var(--color-primary);
   }
 
   .footer-bottom {
@@ -496,7 +496,7 @@ const localBusinessLd = {
   }
   .footer-bottom p {
     font-size: var(--text-xs);
-    color: rgba(255,255,255,0.4);
+    color: var(--color-text-muted);
   }
 
 

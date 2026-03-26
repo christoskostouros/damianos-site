@@ -32,167 +32,265 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Cleaning Process (Hero Section) -->
-  <section class="process section-padding" id="katharismos">
-    <div class="container">
-      <div class="process-header reveal">
-        <span class="section-label">Η Κύρια Υπηρεσία Μας</span>
-        <h2 class="section-title">Καθαρισμός Ταπήτων</h2>
-        <p class="section-subtitle">Ο καθαρισμός χαλιών γίνεται αυστηρά με χειρονακτικό τρόπο, σύμφωνα με τις παραδοσιακές μεθόδους. Τα χαλιά πλένονται ριζικά με άφθονο νερό.</p>
-        <hr class="divider">
-      </div>
-
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Σαπούνισμα</h3>
-            <p>Χρήση ειδικής σκόνης σαπουνιού, ιδανικής για όλους τους τύπους ταπήτων και ανάδειξη χρωμάτων.</p>
-          </div>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Τρίψιμο</h3>
-            <p>Χειροκίνητη περιστροφική μηχανή με ειδική βούρτσα — επιμονή στα πιο «ταλαιπωρημένα» σημεία.</p>
-          </div>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Ξέβγαλμα</h3>
-            <p>Σχολαστικό ξέβγαλμα μέχρι το τελευταίο ίχνος σαπουνάδας, με χρήση κέλμπερι που «χτενίζει» τον πέλο και ισιώνει τσαλακώματα.</p>
-          </div>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>Καθαρισμός Κροσιών</h3>
-            <p>Πιεστικό μηχάνημα νερού (χωρίς χημικά) για τα κρόσια — λεπτομερής φροντίδα.</p>
-          </div>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>Στύψιμο</h3>
-            <p>Σύγχρονο φυγοκεντρικό μηχάνημα — αποφυγή ξεβαμμάτων, διατήρηση ζωντανών χρωμάτων.</p>
-          </div>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-number">6</div>
-          <div class="step-content">
-            <h3>Στέγνωμα</h3>
-            <p>Φυσικά αεριζόμενος στεγασμένος χώρος, μακριά από ηλιακές ακτίνες, για τέλειο αποτέλεσμα.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="process-note reveal">Το τέλειο αποτέλεσμα επιτυγχάνεται μόνο από εξειδικευμένη ανθρώπινη προσπάθεια, με χειρονακτικό τρόπο.</p>
-    </div>
-  </section>
-
-  <!-- Full-bleed image divider -->
-  <div class="fullbleed-image">
-    <img src="/images/storage-facility.jpg" alt="Εγκαταστάσεις φύλαξης ταπήτων ΔΑΜΙΑΝΟΣ" loading="lazy" width="1920" height="500">
-  </div>
-
-  <!-- Other Services -->
-  <section class="other-services section-padding" id="fylaksi">
+  <!-- Services Accordion -->
+  <section class="services-section section-padding">
     <div class="container">
 
-      <!-- Storage -->
-      <div class="service-block reveal">
-        <div class="service-block-header">
-          <div class="service-block-icon">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
-              <rect x="6" y="8" width="20" height="18" rx="2"/>
-              <path d="M6 14h20"/>
-              <path d="M12 8V5M20 8V5"/>
-            </svg>
+      <!-- 1. Καθαρισμός Ταπήτων (open by default) -->
+      <div class="svc-accordion svc-accordion--open reveal" data-accordion>
+        <button class="svc-accordion-trigger" aria-expanded="true">
+          <div class="svc-trigger-left">
+            <span class="svc-number">01</span>
+            <div>
+              <h2 class="svc-title">Καθαρισμός Ταπήτων</h2>
+              <p class="svc-brief">Χειρονακτικός υγρός καθαρισμός με παραδοσιακές μεθόδους</p>
+            </div>
           </div>
-          <h2 class="service-block-title">Φύλαξη Ταπήτων</h2>
-        </div>
-        <div class="service-block-content">
-          <p>Στις σύγχρονες ιδιόκτητες εγκαταστάσεις μας στο Νέο Ηράκλειο. Τα χαλιά φυλάσσονται σε ειδικά ράφια μέσα σε νάιλον θήκη, υπό τις καταλληλότερες συνθήκες.</p>
-          <div class="service-highlight">
-            <strong>Δωρεάν φύλαξη</strong> σε συνδυασμό με καθαρισμό, μέχρι 31 Δεκεμβρίου του έτους παράδοσης. Μετά, ισχύουν χρεωστικά φυλάξεως (τιμή/τ.μ. + ΦΠΑ).
+          <svg class="svc-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="svc-accordion-body">
+          <div class="svc-intro">
+            <p>Ο καθαρισμός χαλιών γίνεται αυστηρά με χειρονακτικό τρόπο, σύμφωνα με τις παραδοσιακές μεθόδους που διδαχθήκαμε από τους παλαιότερους συναδέλφους μας. Τα χαλιά πλένονται ριζικά με άφθονο νερό, που διοχετεύεται στο χαλί και από την κάτω του πλευρά, ώστε η σκόνη και η βρώμα να αποβάλλονται εις βάθος και όχι απλά επιφανειακά.</p>
+          </div>
+
+          <h3 class="svc-subtitle">Η Διαδικασία Βήμα-Βήμα</h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Σαπούνισμα</h4>
+                <p>Χρήση ειδικής σκόνης σαπουνιού, ιδανικής για όλους τους τύπους ταπήτων και ανάδειξη χρωμάτων.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Τρίψιμο</h4>
+                <p>Χειροκίνητη περιστροφική μηχανή με ειδική βούρτσα — επιμονή στα πιο «ταλαιπωρημένα» σημεία.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Ξέβγαλμα</h4>
+                <p>Σχολαστικό ξέβγαλμα με χρήση κέλμπερι (παραδοσιακό χειροκίνητο εργαλείο) που «χτενίζει» τον πέλο και ισιώνει τσαλακώματα.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Καθαρισμός Κροσιών</h4>
+                <p>Πιεστικό μηχάνημα νερού (χωρίς χημικά) για κάθε λεπτομέρεια στα κρόσια.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h4>Στύψιμο</h4>
+                <p>Σύγχρονο φυγοκεντρικό μηχάνημα — αποφυγή ξεβαμμάτων, διατήρηση ζωντανών χρωμάτων.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <h4>Στέγνωμα</h4>
+                <p>Φυσικά αεριζόμενος στεγασμένος χώρος, μακριά από ηλιακές ακτίνες.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="process-note">Το τέλειο αποτέλεσμα επιτυγχάνεται μόνο από εξειδικευμένη ανθρώπινη προσπάθεια, με χειρονακτικό τρόπο.</p>
+
+          <!-- Pricing CTA inside cleaning service -->
+          <div class="svc-pricing-cta">
+            <div class="svc-pricing-card svc-pricing-card--main">
+              <span class="svc-pricing-badge">Κύρια Υπηρεσία</span>
+              <h4>Ριζικό Πλύσιμο Χειροποίητων Χαλιών</h4>
+              <p>Χειρονακτικός υγρός καθαρισμός με παραδοσιακές μεθόδους. Περιλαμβάνει σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμό κροσιών, στύψιμο και στέγνωμα.</p>
+              <div class="svc-pricing-price">
+                <span class="svc-pricing-from">Από</span>
+                <span class="svc-pricing-amount">8€</span>
+                <span class="svc-pricing-unit">/τ.μ.*</span>
+              </div>
+              <a href="tel:+302102776365" class="btn btn--primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Καλέστε για Εκτίμηση
+              </a>
+            </div>
+            <div class="svc-pricing-extras">
+              <div class="svc-pricing-card svc-pricing-card--small">
+                <h4>Πλύσιμο Κουβέρτας</h4>
+                <p>Μονή / Διπλή</p>
+                <div class="svc-pricing-price">
+                  <span class="svc-pricing-amount svc-pricing-amount--sm">15€</span>
+                  <span class="svc-pricing-unit">/τεμ. + ΦΠΑ</span>
+                </div>
+              </div>
+              <div class="svc-pricing-card svc-pricing-card--small">
+                <h4>Πλύσιμο Παπλώματος</h4>
+                <p>Μονό / Διπλό</p>
+                <div class="svc-pricing-price">
+                  <span class="svc-pricing-amount svc-pricing-amount--sm">18€</span>
+                  <span class="svc-pricing-unit">/τεμ. + ΦΠΑ</span>
+                </div>
+              </div>
+            </div>
+            <p class="svc-pricing-note">* Στην τιμή δεν συμπεριλαμβάνεται ΦΠΑ 24%</p>
           </div>
         </div>
       </div>
 
-      <!-- Repairs -->
-      <div class="service-block reveal" id="episkeves">
-        <div class="service-block-header">
-          <div class="service-block-icon">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
-              <path d="M8 28V12l8-8 8 8v16"/>
-              <path d="M4 28h24"/>
-              <rect x="12" y="18" width="8" height="10"/>
-            </svg>
+      <!-- 2. Φύλαξη Ταπήτων -->
+      <div class="svc-accordion reveal" data-accordion>
+        <button class="svc-accordion-trigger" aria-expanded="false">
+          <div class="svc-trigger-left">
+            <span class="svc-number">02</span>
+            <div>
+              <h2 class="svc-title">Φύλαξη Ταπήτων</h2>
+              <p class="svc-brief">Ασφαλής φύλαξη σε ιδιόκτητες εγκαταστάσεις 800 τ.μ.</p>
+            </div>
           </div>
-          <h2 class="service-block-title">Επισκευές Χαλιών</h2>
+          <svg class="svc-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="svc-accordion-body">
+          <p>Η φύλαξη των ταπήτων γίνεται στις σύγχρονες ιδιόκτητες εγκαταστάσεις μας στο Νέο Ηράκλειο. Τα χαλιά είναι απολύτως ασφαλή και φυλάσσονται σε ειδικά ράφια μέσα σε νάιλον θήκη, κάτω από τις καταλληλότερες συνθήκες.</p>
+
+          <div class="svc-highlight">
+            <strong>Δωρεάν φύλαξη</strong> σε συνδυασμό με τον καθαρισμό, μέχρι τις 31 Δεκεμβρίου του έτους που παραδόθηκαν σε εμάς.
+          </div>
+
+          <p>Μετά την παρέλευση της συγκεκριμένης ημερομηνίας και την υποχρεωτική εξόφληση του λογαριασμού καθαρισμού τους, υπολογίζονται χρεωστικά φυλάξεως (ισχύουσα τιμή / τετραγωνικό μέτρο + Φ.Π.Α.).</p>
+
+          <div class="svc-features">
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Ειδικά ράφια αποθήκευσης</span>
+            </div>
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Νάιλον θήκη προστασίας</span>
+            </div>
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Κατάλληλες συνθήκες θερμοκρασίας & υγρασίας</span>
+            </div>
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>800 τ.μ. ιδιόκτητες εγκαταστάσεις</span>
+            </div>
+          </div>
         </div>
-        <div class="service-block-content">
-          <p>Κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα χαλιά και μοκέτες:</p>
-          <ul class="service-list">
+      </div>
+
+      <!-- 3. Επισκευές Χαλιών -->
+      <div class="svc-accordion reveal" data-accordion>
+        <button class="svc-accordion-trigger" aria-expanded="false">
+          <div class="svc-trigger-left">
+            <span class="svc-number">03</span>
+            <div>
+              <h2 class="svc-title">Επισκευές Χαλιών</h2>
+              <p class="svc-brief">Αλλαγή ρελιών, κροσιών, μπαλώματα, κοψίματα</p>
+            </div>
+          </div>
+          <svg class="svc-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="svc-accordion-body">
+          <p>Η επιχείρησή μας αναλαμβάνει κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα χαλιά και μοκέτες.</p>
+
+          <h3 class="svc-subtitle">Μηχανοποίητα Χαλιά & Μοκέτες</h3>
+          <ul class="svc-list">
             <li>Αλλαγή ρελιών (μάλλινο ή νάιλον)</li>
-            <li>Αλλαγή κροσιών (ποικιλία σχεδίων, ποιοτήτων, αποχρώσεων)</li>
-            <li>Κόψιμο ταπήτων</li>
+            <li>Αλλαγή κροσιών (ποικιλία σε σχέδια, ποιότητες και αποχρώσεις)</li>
+            <li>Κόψιμο ταπήτων στο επιθυμητό μέγεθος</li>
             <li>Μπάλωμα με θερμοκόλληση</li>
-            <li>Ειδικά για χειροποίητα: αντικατάσταση κροσιών, επισκευή φθορών</li>
+          </ul>
+
+          <h3 class="svc-subtitle">Χειροποίητα Χαλιά</h3>
+          <ul class="svc-list">
+            <li>Αντικατάσταση κροσιών</li>
+            <li>Επισκευή σε διαφόρων ειδών φθορές</li>
+            <li>Αποκατάσταση ζημιών από φθορά χρήσης ή σκόρο</li>
           </ul>
         </div>
       </div>
 
-      <!-- Pickup & Delivery -->
-      <div class="service-block reveal" id="paralavi">
-        <div class="service-block-header">
-          <div class="service-block-icon">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
-              <path d="M4 16h8l4-8 4 8h8"/>
-              <circle cx="8" cy="24" r="3"/>
-              <circle cx="24" cy="24" r="3"/>
-              <path d="M11 24h10"/>
-            </svg>
+      <!-- 4. Παραλαβή & Παράδοση -->
+      <div class="svc-accordion reveal" data-accordion>
+        <button class="svc-accordion-trigger" aria-expanded="false">
+          <div class="svc-trigger-left">
+            <span class="svc-number">04</span>
+            <div>
+              <h2 class="svc-title">Παραλαβή & Παράδοση</h2>
+              <p class="svc-brief">Δωρεάν μεταφορά με ιδιόκτητα μέσα σε όλη την Αττική</p>
+            </div>
           </div>
-          <h2 class="service-block-title">Παραλαβή & Παράδοση</h2>
-        </div>
-        <div class="service-block-content">
-          <p>Με ιδιόκτητα μεταφορικά μέσα, κατόπιν ραντεβού, στο συντομότερο δυνατό χρόνο.</p>
+          <svg class="svc-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="svc-accordion-body">
+          <p>Η παραλαβή και παράδοση των ταπήτων γίνεται με ιδιόκτητα μεταφορικά μέσα, κατόπιν ραντεβού και στο συντομότερο δυνατόν χρόνο από τη στιγμή της ειδοποίησής σας.</p>
+
           <div class="delivery-grid">
             <div class="delivery-card">
-              <h4>Απρίλιος – Δεκέμβριος</h4>
               <span class="delivery-tag delivery-tag--green">Υψηλή Κίνηση</span>
-              <p>Δωρεάν μεταφορά σε μαζικά δρομολόγια</p>
+              <h4>Απρίλιος – Δεκέμβριος</h4>
+              <p>Δωρεάν μεταφορά σε μαζικά δρομολόγια σε όλο το λεκανοπέδιο Αττικής.</p>
             </div>
             <div class="delivery-card">
-              <h4>Ιανουάριος – Μάρτιος</h4>
               <span class="delivery-tag delivery-tag--muted">Χαμηλή Κίνηση</span>
-              <p>Ενδέχεται μεταφορικά έξοδα, ανάλογα την απόσταση</p>
+              <h4>Ιανουάριος – Μάρτιος</h4>
+              <p>Ενδέχεται μεταφορικά έξοδα, που ποικίλουν ανάλογα την απόσταση από την έδρα μας.</p>
             </div>
+          </div>
+
+          <div class="svc-cta-inline">
+            <p>Κλείστε ραντεβού παραλαβής τηλεφωνικά:</p>
+            <a href="tel:+302102776365" class="btn btn--primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              210 27 76 365
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Blankets -->
-      <div class="service-block reveal" id="paplomata">
-        <div class="service-block-header">
-          <div class="service-block-icon">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
-              <ellipse cx="16" cy="16" rx="12" ry="8"/>
-              <path d="M16 8c3 2 5 5 5 8s-2 6-5 8"/>
-              <path d="M16 8c-3 2-5 5-5 8s2 6 5 8"/>
-            </svg>
+      <!-- 5. Παπλώματα & Κουβέρτες -->
+      <div class="svc-accordion reveal" data-accordion>
+        <button class="svc-accordion-trigger" aria-expanded="false">
+          <div class="svc-trigger-left">
+            <span class="svc-number">05</span>
+            <div>
+              <h2 class="svc-title">Πλύσιμο Παπλωμάτων & Κουβερτών</h2>
+              <p class="svc-brief">Χειρονακτικός καθαρισμός χωρίς χημικά, πραγματική φρεσκάδα</p>
+            </div>
           </div>
-          <h2 class="service-block-title">Πλύσιμο Παπλωμάτων & Κουβερτών</h2>
-        </div>
-        <div class="service-block-content">
-          <p>Υγρός καθαρισμός αυστηρά χειρονακτικός, χωρίς πλυντήρια και χημικά. Τα κλινοσκεπάσματα επιστρέφονται απολύτως καθαρά, υγιεινά, μυρίζοντας πραγματική φρεσκάδα.</p>
+          <svg class="svc-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="svc-accordion-body">
+          <p>Η επιχείρησή μας αναλαμβάνει τον υγρό καθαρισμό των κουβερτών και παπλωμάτων σας. Η διαδικασία γίνεται, όπως και στους τάπητες, αυστηρά με χειρονακτικό τρόπο, απουσία πλυντηρίων και οποιασδήποτε χημικής επεξεργασίας.</p>
+          <p>Αποφεύγονται οσμές του στεγνού καθαρισμού και τα αγαπημένα σας κλινοσκεπάσματα επιστρέφονται σε εσάς και την οικογένειά σας, απολύτως καθαρά και υγιεινά, μυρίζοντας πραγματική φρεσκάδα.</p>
+
+          <div class="svc-features">
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Χωρίς πλυντήρια</span>
+            </div>
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Χωρίς χημικά</span>
+            </div>
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>100% χειρονακτικός καθαρισμός</span>
+            </div>
+            <div class="svc-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Πραγματική φρεσκάδα</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -220,114 +318,254 @@ const serviceSchema = {
     line-height: 1.65;
   }
 
-  /* Process Section */
-  .process { background: var(--color-bg); }
-  .process-header { margin-bottom: var(--space-12); max-width: 600px; }
+  /* ===== Accordion ===== */
+  .services-section {
+    background: var(--color-bg);
+  }
+  .svc-accordion {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast);
+  }
+  .svc-accordion:hover {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .svc-accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6) var(--space-8);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: var(--space-4);
+  }
+  .svc-trigger-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    min-width: 0;
+  }
+  .svc-number {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-cream);
+    line-height: 1;
+  }
+  .svc-accordion--open .svc-number,
+  .svc-accordion:hover .svc-number {
+    color: var(--color-primary);
+    opacity: 0.3;
+  }
+  .svc-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+  .svc-brief {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+  .svc-chevron {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    transition: transform 0.3s ease;
+  }
+  .svc-accordion--open .svc-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Accordion body */
+  .svc-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 var(--space-8);
+  }
+  .svc-accordion--open .svc-accordion-body {
+    max-height: 3000px;
+    padding: 0 var(--space-8) var(--space-8);
+  }
+
+  .svc-accordion-body > p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-4);
+    max-width: 72ch;
+  }
+  .svc-intro p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-6);
+    max-width: 72ch;
+  }
+  .svc-subtitle {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-6);
+    color: var(--color-text);
+  }
+
+  /* Process steps */
   .process-steps {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-    max-width: 900px;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
   }
   .process-step {
     display: flex;
-    gap: var(--space-5);
-    padding: var(--space-6);
-    background: var(--color-surface);
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     align-items: flex-start;
   }
   .step-number {
     flex-shrink: 0;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-display);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: 700;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
     border-radius: 50%;
     line-height: 1;
   }
-  .step-content h3 {
+  .step-content h4 {
     font-family: var(--font-display);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: 600;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
   }
   .step-content p {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     color: var(--color-text-muted);
-    line-height: 1.65;
+    line-height: 1.6;
   }
   .process-note {
-    margin-top: var(--space-8);
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     font-style: italic;
     border-left: 3px solid var(--color-gold);
     padding-left: var(--space-4);
     max-width: 600px;
+    margin-bottom: var(--space-8);
   }
 
-  @media (max-width: 768px) {
-    .process-steps { grid-template-columns: 1fr; }
+  /* Pricing CTA */
+  .svc-pricing-cta {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
   }
-
-  /* Full-bleed image */
-  .fullbleed-image {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-  }
-  .fullbleed-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Other Services */
-  .other-services { background: var(--color-surface); }
-  .service-block {
-    padding-bottom: var(--space-12);
-    margin-bottom: var(--space-12);
-    border-bottom: 1px solid var(--color-border);
-  }
-  .service-block:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-  .service-block-header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
-  }
-  .service-block-icon {
-    flex-shrink: 0;
-  }
-  .service-block-title {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: 600;
-  }
-  .service-block-content {
-    padding-left: 60px;
-    max-width: 700px;
-  }
-  .service-block-content p {
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
-    line-height: 1.75;
+  .svc-pricing-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
     margin-bottom: var(--space-4);
   }
+  .svc-pricing-card--main {
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-surface) 100%);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+  }
+  .svc-pricing-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+  }
+  .svc-pricing-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .svc-pricing-card > p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    max-width: 52ch;
+  }
+  .svc-pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+  }
+  .svc-pricing-from {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .svc-pricing-amount {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+  .svc-pricing-amount--sm {
+    font-size: var(--text-xl);
+  }
+  .svc-pricing-unit {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .svc-pricing-extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  .svc-pricing-card--small {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+  }
+  .svc-pricing-card--small h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-1);
+  }
+  .svc-pricing-card--small > p {
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-2);
+  }
+  .svc-pricing-card--small .svc-pricing-price {
+    margin-bottom: 0;
+  }
+  .svc-pricing-note {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-3);
+  }
 
-  .service-highlight {
+  /* Highlight box */
+  .svc-highlight {
     background: var(--color-cream);
     border-left: 3px solid var(--color-sage);
     padding: var(--space-4) var(--space-6);
@@ -335,23 +573,44 @@ const serviceSchema = {
     font-size: var(--text-sm);
     color: var(--color-text);
     line-height: 1.7;
+    margin-bottom: var(--space-4);
   }
 
-  .service-list {
+  /* Feature list with checkmarks */
+  .svc-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .svc-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+  .svc-feature svg {
+    flex-shrink: 0;
+  }
+
+  /* Bullet list */
+  .svc-list {
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    margin-bottom: var(--space-4);
   }
-  .service-list li {
+  .svc-list li {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     padding-left: var(--space-5);
     position: relative;
     line-height: 1.6;
   }
-  .service-list li::before {
+  .svc-list li::before {
     content: '';
     position: absolute;
     left: 0;
@@ -362,16 +621,18 @@ const serviceSchema = {
     background: var(--color-gold);
   }
 
+  /* Delivery grid */
   .delivery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
+    margin-bottom: var(--space-6);
   }
   .delivery-card {
     padding: var(--space-5);
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
   }
   .delivery-card h4 {
     font-family: var(--font-display);
@@ -381,11 +642,13 @@ const serviceSchema = {
   }
   .delivery-card p {
     font-size: var(--text-sm);
+    color: var(--color-text-muted);
     margin-bottom: 0;
+    line-height: 1.6;
   }
   .delivery-tag {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -393,11 +656,51 @@ const serviceSchema = {
     border-radius: var(--radius-sm);
     margin-bottom: var(--space-2);
   }
-  .delivery-tag--green { background: var(--color-sage-light); color: #3B6B55; }
+  .delivery-tag--green { background: rgba(122,158,142,0.15); color: #3B6B55; }
   .delivery-tag--muted { background: var(--color-cream); color: var(--color-text-muted); }
 
+  /* Inline CTA */
+  .svc-cta-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+  .svc-cta-inline p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+  }
+
   @media (max-width: 768px) {
-    .service-block-content { padding-left: 0; }
+    .svc-accordion-trigger { padding: var(--space-4) var(--space-5); }
+    .svc-accordion-body { padding: 0 var(--space-5); }
+    .svc-accordion--open .svc-accordion-body { padding: 0 var(--space-5) var(--space-6); }
+    .svc-number { display: none; }
+    .process-steps { grid-template-columns: 1fr; }
+    .svc-pricing-extras { grid-template-columns: 1fr; }
+    .svc-features { grid-template-columns: 1fr; }
     .delivery-grid { grid-template-columns: 1fr; }
+    .svc-cta-inline { flex-direction: column; align-items: flex-start; }
   }
 </style>
+
+<script is:inline>
+  // Accordion toggle
+  document.querySelectorAll('[data-accordion]').forEach(accordion => {
+    const trigger = accordion.querySelector('.svc-accordion-trigger');
+    trigger.addEventListener('click', () => {
+      const isOpen = accordion.classList.contains('svc-accordion--open');
+      // Close all
+      document.querySelectorAll('[data-accordion]').forEach(a => {
+        a.classList.remove('svc-accordion--open');
+        a.querySelector('.svc-accordion-trigger').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked (if it was closed)
+      if (!isOpen) {
+        accordion.classList.add('svc-accordion--open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
