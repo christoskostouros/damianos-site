@@ -37,7 +37,7 @@ const serviceSchema = {
     <div class="container">
 
       <!-- 1. Καθαρισμός Ταπήτων (open by default) -->
-      <div class="svc-accordion svc-accordion--open reveal" data-accordion>
+      <div class="svc-accordion svc-accordion--open reveal" data-accordion id="katharismos">
         <button class="svc-accordion-trigger" aria-expanded="true">
           <div class="svc-trigger-left">
             <span class="svc-number">01</span>
@@ -142,7 +142,7 @@ const serviceSchema = {
       </div>
 
       <!-- 2. Φύλαξη Ταπήτων -->
-      <div class="svc-accordion reveal" data-accordion>
+      <div class="svc-accordion reveal" data-accordion id="fylaksi">
         <button class="svc-accordion-trigger" aria-expanded="false">
           <div class="svc-trigger-left">
             <span class="svc-number">02</span>
@@ -185,7 +185,7 @@ const serviceSchema = {
       </div>
 
       <!-- 3. Επισκευές Χαλιών -->
-      <div class="svc-accordion reveal" data-accordion>
+      <div class="svc-accordion reveal" data-accordion id="episkeves">
         <button class="svc-accordion-trigger" aria-expanded="false">
           <div class="svc-trigger-left">
             <span class="svc-number">03</span>
@@ -218,7 +218,7 @@ const serviceSchema = {
       </div>
 
       <!-- 4. Παραλαβή & Παράδοση -->
-      <div class="svc-accordion reveal" data-accordion>
+      <div class="svc-accordion reveal" data-accordion id="paralavi">
         <button class="svc-accordion-trigger" aria-expanded="false">
           <div class="svc-trigger-left">
             <span class="svc-number">04</span>
@@ -257,7 +257,7 @@ const serviceSchema = {
       </div>
 
       <!-- 5. Παπλώματα & Κουβέρτες -->
-      <div class="svc-accordion reveal" data-accordion>
+      <div class="svc-accordion reveal" data-accordion id="paplomata">
         <button class="svc-accordion-trigger" aria-expanded="false">
           <div class="svc-trigger-left">
             <span class="svc-number">05</span>
@@ -687,20 +687,39 @@ const serviceSchema = {
 
 <script is:inline>
   // Accordion toggle
+  function openAccordion(accordion) {
+    document.querySelectorAll('[data-accordion]').forEach(a => {
+      a.classList.remove('svc-accordion--open');
+      a.querySelector('.svc-accordion-trigger').setAttribute('aria-expanded', 'false');
+    });
+    accordion.classList.add('svc-accordion--open');
+    accordion.querySelector('.svc-accordion-trigger').setAttribute('aria-expanded', 'true');
+  }
+
   document.querySelectorAll('[data-accordion]').forEach(accordion => {
     const trigger = accordion.querySelector('.svc-accordion-trigger');
     trigger.addEventListener('click', () => {
       const isOpen = accordion.classList.contains('svc-accordion--open');
-      // Close all
-      document.querySelectorAll('[data-accordion]').forEach(a => {
-        a.classList.remove('svc-accordion--open');
-        a.querySelector('.svc-accordion-trigger').setAttribute('aria-expanded', 'false');
-      });
-      // Open clicked (if it was closed)
-      if (!isOpen) {
-        accordion.classList.add('svc-accordion--open');
-        trigger.setAttribute('aria-expanded', 'true');
+      if (isOpen) {
+        accordion.classList.remove('svc-accordion--open');
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        openAccordion(accordion);
       }
     });
   });
+
+  // Open accordion from hash link (e.g. /ypiresies#fylaksi)
+  function handleHash() {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const target = document.getElementById(hash);
+      if (target && target.hasAttribute('data-accordion')) {
+        openAccordion(target);
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    }
+  }
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
 </script>
