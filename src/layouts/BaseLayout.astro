@@ -483,32 +483,28 @@ const localBusinessLd = {
     /* Mobile dropdown */
     .dropdown-menu {
       position: static;
-      transform: none;
+      transform: none !important;
       min-width: auto;
       box-shadow: none;
       border: none;
-      background: transparent;
-      padding: 0 0 0 var(--space-4);
-      opacity: 1;
-      visibility: visible;
+      border-left: 2px solid var(--color-border);
+      background: var(--color-surface);
+      padding: 0;
+      margin: var(--space-1) 0 var(--space-1) var(--space-6);
+      opacity: 1 !important;
+      visibility: visible !important;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
+      z-index: auto;
     }
     .nav-dropdown.open .dropdown-menu {
       max-height: 400px;
     }
-    .nav-dropdown:hover .dropdown-menu {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .nav-dropdown.open .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-    }
     .dropdown-link {
       padding: var(--space-2) var(--space-4);
       font-size: var(--text-sm);
+      color: var(--color-text-muted);
     }
   }
 
