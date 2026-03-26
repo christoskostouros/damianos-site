@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "Τι είναι το ριζικό χειροποίητο πλύσιμο;",
+    answer: "Υγρός καθαρισμός (όχι στεγνός) με άφθονο νερό που διοχετεύεται και από κάτω, αποβάλλοντας σκόνη και βρώμα μέχρι τη ρίζα του πέλους. Χειροποίητο γιατί δεν χρησιμοποιούμε αυτόματο μηχάνημα — επιμένουμε στα πιο βρώμικα κομμάτια μέχρι τέλειο αποτέλεσμα."
+  },
+  {
+    question: "Γιατί να προτιμήσω τον υγρό από τον στεγνό καθαρισμό;",
+    answer: "Τα χημικά του στεγνού καθαρισμού δεν αποβάλλονται ποτέ — είναι επικίνδυνα για αλλεργίες (ιδιαίτερα σε μωρά) και «καίνε» σταδιακά το μαλλί του χαλιού. Το μαλλί είναι ζωντανή ύλη, αναπνέει. Χρειάζεται τακτική αναζωογόνηση με πλύσιμο (1 φορά/χρόνο), χωρίς χημικά."
+  },
+  {
+    question: "Η φύλαξη χρεώνεται; Αν πάρω τα χαλιά το καλοκαίρι πληρώνω λιγότερα;",
+    answer: "Η φύλαξη δε χρεώνεται αν τα χαλιά παραδοθούν μέχρι 31 Δεκεμβρίου. Μετά, ισχύουν χρεωστικά φυλάξεως (τιμή/τ.μ.) εφόσον εξοφληθεί ο λογαριασμός πλυσίματος."
+  },
+  {
+    question: "Πώς υπολογίζεται το κόστος πλυσίματος;",
+    answer: "Μήκος × Πλάτος = εμβαδόν σε τ.μ. × τιμή πλυσίματος. Στους μικρούς τάπητες, ελάχιστη υπολογιζόμενη διάσταση 1 μέτρο ανά πλευρά."
+  },
+  {
+    question: "Υπάρχει καταληκτική ημερομηνία;",
+    answer: "Όχι, εξυπηρετούμε όλο τον χρόνο. Για αποκλειστική παραλαβή ενός πελάτη, ενδέχεται μεταφορικά έξοδα κατόπιν συμφωνίας."
+  },
+  {
+    question: "Τι άλλα είδη πλένετε εκτός χαλιών;",
+    answer: "Φλοκάτες, κιλίμια, κουρελούδες, ψάθινους τάπητες, δέρματα, κουβέρτες και παπλώματα."
+  },
+  {
+    question: "Αν δεν στρώσω το χαλί για ένα χρόνο, χρειάζεται εκ νέου πλύσιμο;",
+    answer: "Το χαλί πρέπει να πλένεται μία φορά τον χρόνο, ακόμα κι αν δεν χρησιμοποιείται, για αναζωογόνηση και σωστή συντήρηση. Πριν το ξαναστρώσετε, αερίστε το σε ανοιχτό χώρο (μακριά από ήλιο) για μερικές ώρες."
+  },
+  {
+    question: "Ποιος είναι ο σωστός τρόπος φύλαξης σε δικό μου χώρο;",
+    answer: "Βεβαιωθείτε ότι είναι στεγνός, χωρίς οσμές ή μούχλα. Τοποθετήστε σε ράφι, οριζόντια, τουλάχιστον 20-30 εκ. από το δάπεδο. Αποφύγετε σημεία κοντά σε σωλήνες νερού."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  })),
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+};
+---
+
+<BaseLayout
+  title="Συχνές Ερωτήσεις για Πλύσιμο Ταπήτων | ΔΑΜΙΑΝΟΣ"
+  description="Απαντήσεις σε συχνές ερωτήσεις για τον καθαρισμό χαλιών, τη φύλαξη, τις τιμές και τη σωστή φροντίδα ταπήτων."
+  jsonLd={faqSchema}
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">FAQ</span>
+      <h1 class="page-hero-title">Συχνές Ερωτήσεις</h1>
+      <p class="page-hero-subtitle">Απαντήσεις στις πιο κοινές ερωτήσεις σχετικά με τον καθαρισμό, τη φύλαξη και τη φροντίδα των χαλιών σας.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="faq-section section-padding">
+    <div class="container container--narrow">
+
+      <!-- Intro -->
+      <div class="faq-intro reveal">
+        <p>Ένας τάπητας είναι αναπόσπαστο κομμάτι της διακόσμησης ενός ελληνικού σπιτιού. Μας προσφέρει ζεστασιά και προστασία, αλλά είναι και μία από τις μεγαλύτερες εστίες μικροβίων, σκόνης και βρωμιάς. Τα ακάρεα τρέφονται από νεκρά κύτταρα επιδερμίδας και προκαλούν αλλεργίες. Γι' αυτό ο σωστός καθαρισμός είναι κρίσιμης σημασίας.</p>
+      </div>
+
+      <hr class="divider" style="margin-bottom: var(--space-10);">
+
+      <!-- Accordion -->
+      <div class="faq-list">
+        {faqs.map((faq, i) => (
+          <div class="faq-item reveal" data-faq-item>
+            <button class="faq-trigger" aria-expanded="false" aria-controls={`faq-${i}`}>
+              <span class="faq-question">{faq.question}</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="faq-answer" id={`faq-${i}`} role="region">
+              <p>{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="faq-cta reveal">
+        <p>Δεν βρήκατε αυτό που ψάχνατε;</p>
+        <div class="faq-cta-actions">
+          <a href="tel:+302102776365" class="btn btn--primary">Καλέστε μας</a>
+          <a href="/epikoinonia" class="btn btn--outline">Φόρμα Επικοινωνίας</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--color-cream);
+    padding: var(--space-24) 0 var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+  .page-hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+
+  .faq-section { background: var(--color-bg); }
+
+  .faq-intro {
+    margin-bottom: var(--space-6);
+  }
+  .faq-intro p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  /* Accordion */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .faq-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+  .faq-item.open {
+    border-color: var(--color-primary);
+  }
+  .faq-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-5) var(--space-6);
+    text-align: left;
+    gap: var(--space-4);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .faq-question {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+  .faq-chevron {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+  }
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 var(--space-6);
+  }
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 0 var(--space-6) var(--space-6);
+  }
+  .faq-answer p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+  }
+
+  /* CTA */
+  .faq-cta {
+    margin-top: var(--space-12);
+    text-align: center;
+    padding: var(--space-8);
+    background: var(--color-cream);
+    border-radius: var(--radius-xl);
+  }
+  .faq-cta p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+    max-width: 100%;
+  }
+  .faq-cta-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
+
+<script is:inline>
+  document.querySelectorAll('[data-faq-item]').forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('[data-faq-item]').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+      });
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

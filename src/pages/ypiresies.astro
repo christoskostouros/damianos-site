@@ -1,0 +1,408 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Carpet Cleaning",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Αττική, Ελλάδα"
+  },
+  "description": "Χειροποίητο ριζικό πλύσιμο ταπήτων, φύλαξη, επισκευές, παραλαβή & παράδοση",
+  "creator": {
+    "@type": "SoftwareApplication",
+    "name": "Perplexity Computer",
+    "url": "https://www.perplexity.ai/computer"
+  }
+};
+---
+
+<BaseLayout
+  title="Υπηρεσίες Καθαρισμού Ταπήτων | ΔΑΜΙΑΝΟΣ – Πλύσιμο, Φύλαξη, Επισκευές"
+  description="Ολοκληρωμένες υπηρεσίες φροντίδας ταπήτων: χειροποίητο πλύσιμο, φύλαξη, επισκευές, παραλαβή-παράδοση, καθαρισμός παπλωμάτων."
+  jsonLd={serviceSchema}
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Υπηρεσίες</span>
+      <h1 class="page-hero-title">Ολοκληρωμένες Υπηρεσίες<br>Φροντίδας Ταπήτων</h1>
+      <p class="page-hero-subtitle">Από τον καθαρισμό μέχρι τη φύλαξη και τις επισκευές — καλύπτουμε κάθε ανάγκη του χαλιού σας.</p>
+    </div>
+  </section>
+
+  <!-- Cleaning Process (Hero Section) -->
+  <section class="process section-padding" id="katharismos">
+    <div class="container">
+      <div class="process-header reveal">
+        <span class="section-label">Η Κύρια Υπηρεσία Μας</span>
+        <h2 class="section-title">Καθαρισμός Ταπήτων</h2>
+        <p class="section-subtitle">Ο καθαρισμός χαλιών γίνεται αυστηρά με χειρονακτικό τρόπο, σύμφωνα με τις παραδοσιακές μεθόδους. Τα χαλιά πλένονται ριζικά με άφθονο νερό.</p>
+        <hr class="divider">
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Σαπούνισμα</h3>
+            <p>Χρήση ειδικής σκόνης σαπουνιού, ιδανικής για όλους τους τύπους ταπήτων και ανάδειξη χρωμάτων.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Τρίψιμο</h3>
+            <p>Χειροκίνητη περιστροφική μηχανή με ειδική βούρτσα — επιμονή στα πιο «ταλαιπωρημένα» σημεία.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Ξέβγαλμα</h3>
+            <p>Σχολαστικό ξέβγαλμα μέχρι το τελευταίο ίχνος σαπουνάδας, με χρήση κέλμπερι που «χτενίζει» τον πέλο και ισιώνει τσαλακώματα.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Καθαρισμός Κροσιών</h3>
+            <p>Πιεστικό μηχάνημα νερού (χωρίς χημικά) για τα κρόσια — λεπτομερής φροντίδα.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Στύψιμο</h3>
+            <p>Σύγχρονο φυγοκεντρικό μηχάνημα — αποφυγή ξεβαμμάτων, διατήρηση ζωντανών χρωμάτων.</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Στέγνωμα</h3>
+            <p>Φυσικά αεριζόμενος στεγασμένος χώρος, μακριά από ηλιακές ακτίνες, για τέλειο αποτέλεσμα.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="process-note reveal">Το τέλειο αποτέλεσμα επιτυγχάνεται μόνο από εξειδικευμένη ανθρώπινη προσπάθεια, με χειρονακτικό τρόπο.</p>
+    </div>
+  </section>
+
+  <!-- Full-bleed image divider -->
+  <div class="fullbleed-image">
+    <img src="/images/storage-facility.jpg" alt="Εγκαταστάσεις φύλαξης ταπήτων ΔΑΜΙΑΝΟΣ" loading="lazy" width="1920" height="500">
+  </div>
+
+  <!-- Other Services -->
+  <section class="other-services section-padding" id="fylaksi">
+    <div class="container">
+
+      <!-- Storage -->
+      <div class="service-block reveal">
+        <div class="service-block-header">
+          <div class="service-block-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
+              <rect x="6" y="8" width="20" height="18" rx="2"/>
+              <path d="M6 14h20"/>
+              <path d="M12 8V5M20 8V5"/>
+            </svg>
+          </div>
+          <h2 class="service-block-title">Φύλαξη Ταπήτων</h2>
+        </div>
+        <div class="service-block-content">
+          <p>Στις σύγχρονες ιδιόκτητες εγκαταστάσεις μας στο Νέο Ηράκλειο. Τα χαλιά φυλάσσονται σε ειδικά ράφια μέσα σε νάιλον θήκη, υπό τις καταλληλότερες συνθήκες.</p>
+          <div class="service-highlight">
+            <strong>Δωρεάν φύλαξη</strong> σε συνδυασμό με καθαρισμό, μέχρι 31 Δεκεμβρίου του έτους παράδοσης. Μετά, ισχύουν χρεωστικά φυλάξεως (τιμή/τ.μ. + ΦΠΑ).
+          </div>
+        </div>
+      </div>
+
+      <!-- Repairs -->
+      <div class="service-block reveal" id="episkeves">
+        <div class="service-block-header">
+          <div class="service-block-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
+              <path d="M8 28V12l8-8 8 8v16"/>
+              <path d="M4 28h24"/>
+              <rect x="12" y="18" width="8" height="10"/>
+            </svg>
+          </div>
+          <h2 class="service-block-title">Επισκευές Χαλιών</h2>
+        </div>
+        <div class="service-block-content">
+          <p>Κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα χαλιά και μοκέτες:</p>
+          <ul class="service-list">
+            <li>Αλλαγή ρελιών (μάλλινο ή νάιλον)</li>
+            <li>Αλλαγή κροσιών (ποικιλία σχεδίων, ποιοτήτων, αποχρώσεων)</li>
+            <li>Κόψιμο ταπήτων</li>
+            <li>Μπάλωμα με θερμοκόλληση</li>
+            <li>Ειδικά για χειροποίητα: αντικατάσταση κροσιών, επισκευή φθορών</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pickup & Delivery -->
+      <div class="service-block reveal" id="paralavi">
+        <div class="service-block-header">
+          <div class="service-block-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
+              <path d="M4 16h8l4-8 4 8h8"/>
+              <circle cx="8" cy="24" r="3"/>
+              <circle cx="24" cy="24" r="3"/>
+              <path d="M11 24h10"/>
+            </svg>
+          </div>
+          <h2 class="service-block-title">Παραλαβή & Παράδοση</h2>
+        </div>
+        <div class="service-block-content">
+          <p>Με ιδιόκτητα μεταφορικά μέσα, κατόπιν ραντεβού, στο συντομότερο δυνατό χρόνο.</p>
+          <div class="delivery-grid">
+            <div class="delivery-card">
+              <h4>Απρίλιος – Δεκέμβριος</h4>
+              <span class="delivery-tag delivery-tag--green">Υψηλή Κίνηση</span>
+              <p>Δωρεάν μεταφορά σε μαζικά δρομολόγια</p>
+            </div>
+            <div class="delivery-card">
+              <h4>Ιανουάριος – Μάρτιος</h4>
+              <span class="delivery-tag delivery-tag--muted">Χαμηλή Κίνηση</span>
+              <p>Ενδέχεται μεταφορικά έξοδα, ανάλογα την απόσταση</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blankets -->
+      <div class="service-block reveal" id="paplomata">
+        <div class="service-block-header">
+          <div class="service-block-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
+              <ellipse cx="16" cy="16" rx="12" ry="8"/>
+              <path d="M16 8c3 2 5 5 5 8s-2 6-5 8"/>
+              <path d="M16 8c-3 2-5 5-5 8s2 6 5 8"/>
+            </svg>
+          </div>
+          <h2 class="service-block-title">Πλύσιμο Παπλωμάτων & Κουβερτών</h2>
+        </div>
+        <div class="service-block-content">
+          <p>Υγρός καθαρισμός αυστηρά χειρονακτικός, χωρίς πλυντήρια και χημικά. Τα κλινοσκεπάσματα επιστρέφονται απολύτως καθαρά, υγιεινά, μυρίζοντας πραγματική φρεσκάδα.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--color-cream);
+    padding: var(--space-24) 0 var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+  .page-hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+
+  /* Process Section */
+  .process { background: var(--color-bg); }
+  .process-header { margin-bottom: var(--space-12); max-width: 600px; }
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    max-width: 900px;
+  }
+  .process-step {
+    display: flex;
+    gap: var(--space-5);
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    align-items: flex-start;
+  }
+  .step-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    line-height: 1;
+  }
+  .step-content h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .step-content p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+  .process-note {
+    margin-top: var(--space-8);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-left: 3px solid var(--color-gold);
+    padding-left: var(--space-4);
+    max-width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .process-steps { grid-template-columns: 1fr; }
+  }
+
+  /* Full-bleed image */
+  .fullbleed-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+  .fullbleed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Other Services */
+  .other-services { background: var(--color-surface); }
+  .service-block {
+    padding-bottom: var(--space-12);
+    margin-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .service-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .service-block-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  .service-block-icon {
+    flex-shrink: 0;
+  }
+  .service-block-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+  }
+  .service-block-content {
+    padding-left: 60px;
+    max-width: 700px;
+  }
+  .service-block-content p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-4);
+  }
+
+  .service-highlight {
+    background: var(--color-cream);
+    border-left: 3px solid var(--color-sage);
+    padding: var(--space-4) var(--space-6);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .service-list li {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    padding-left: var(--space-5);
+    position: relative;
+    line-height: 1.6;
+  }
+  .service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+  }
+
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  .delivery-card {
+    padding: var(--space-5);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .delivery-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .delivery-card p {
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+  }
+  .delivery-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
+  }
+  .delivery-tag--green { background: var(--color-sage-light); color: #3B6B55; }
+  .delivery-tag--muted { background: var(--color-cream); color: var(--color-text-muted); }
+
+  @media (max-width: 768px) {
+    .service-block-content { padding-left: 0; }
+    .delivery-grid { grid-template-columns: 1fr; }
+  }
+</style>

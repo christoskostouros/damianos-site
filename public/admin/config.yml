@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: christoskostouros/damianos-site
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Σελίδες"
+    files:
+      - label: "Αρχική"
+        name: "home"
+        file: "src/content/home.md"
+        fields:
+          - {label: "Τίτλος Hero", name: "heroTitle", widget: "string"}
+          - {label: "Υπότιτλος Hero", name: "heroSubtitle", widget: "text"}
+          - {label: "SEO Title", name: "seoTitle", widget: "string"}
+          - {label: "SEO Description", name: "seoDescription", widget: "text"}
+      - label: "Εταιρία"
+        name: "company"
+        file: "src/content/company.md"
+        fields:
+          - {label: "Τίτλος", name: "title", widget: "string"}
+          - {label: "Περιεχόμενο", name: "body", widget: "markdown"}
+          - {label: "SEO Title", name: "seoTitle", widget: "string"}
+          - {label: "SEO Description", name: "seoDescription", widget: "text"}
+      - label: "Προσφορές"
+        name: "offers"
+        file: "src/content/offers.md"
+        fields:
+          - {label: "Τίτλος", name: "title", widget: "string"}
+          - {label: "Περιεχόμενο", name: "body", widget: "markdown"}
+          - {label: "SEO Title", name: "seoTitle", widget: "string"}
+          - {label: "SEO Description", name: "seoDescription", widget: "text"}
+  - name: "faq"
+    label: "Συχνές Ερωτήσεις"
+    folder: "src/content/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Ερώτηση", name: "question", widget: "string"}
+      - {label: "Απάντηση", name: "answer", widget: "markdown"}
+      - {label: "Σειρά", name: "order", widget: "number"}
