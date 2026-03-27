@@ -266,6 +266,17 @@ const localBusinessLd = {
   </footer>
 
   <script is:inline>
+    // Spacer for fixed header
+    const navWrapper = document.querySelector('.sticky-nav-wrapper');
+    const mainContent = document.getElementById('main-content');
+    function setHeaderSpacing() {
+      if (navWrapper && mainContent) {
+        mainContent.style.paddingTop = navWrapper.offsetHeight + 'px';
+      }
+    }
+    setHeaderSpacing();
+    window.addEventListener('resize', setHeaderSpacing);
+
     // Add shadow on scroll
     const header = document.getElementById('site-header');
     window.addEventListener('scroll', () => {
@@ -396,8 +407,10 @@ const localBusinessLd = {
 
   /* ===== Header ===== */
   .sticky-nav-wrapper {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
   }
   .site-header {
