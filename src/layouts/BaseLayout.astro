@@ -27,7 +27,7 @@ const navItems = [
   { label: 'Προσφορές', href: '/prosfores' },
   { label: 'Ερωτήσεις', href: '/syxnes-erotiseis' },
   { label: 'Επικοινωνία', href: '/epikoinonia' },
-  { label: 'Η Ιστορία του Χαλιού', href: '/istoria-xaliou' },
+  { label: 'Ιστορία Χαλιού', href: '/istoria-xaliou' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -446,9 +446,10 @@ const localBusinessLd = {
   }
   .nav-link {
     display: block;
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-2);
+    font-size: 0.85rem;
     font-weight: 500;
+    white-space: nowrap;
     color: var(--color-text-muted);
     text-decoration: none;
     border-radius: var(--radius-md);

@@ -474,8 +474,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   @media (max-width: 768px) {
     .values-grid {
       grid-template-columns: 1fr;
+      gap: var(--space-4);
     }
-    .value-card--1 { grid-column: auto; grid-row: auto; }
+    .value-card--1,
+    .value-card--2,
+    .value-card--3 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .value-card--1 {
+      background: linear-gradient(160deg, var(--color-surface) 0%, var(--color-cream) 100%);
+    }
   }
 
   /* ===== Services Preview ===== */
