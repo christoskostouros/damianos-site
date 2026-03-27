@@ -103,6 +103,8 @@ const localBusinessLd = {
   <!-- Skip Link -->
   <a href="#main-content" class="sr-only" style="position:fixed;top:0;left:0;z-index:9999;padding:1rem;background:#fff;">Μετάβαση στο περιεχόμενο</a>
 
+  <!-- Sticky Wrapper for Top Bar + Header -->
+  <div class="sticky-nav-wrapper">
   <!-- Top Bar (Red) -->
   <div class="top-bar" id="top-bar">
     <div class="top-bar-inner container">
@@ -181,6 +183,8 @@ const localBusinessLd = {
     </div>
   </header>
 
+  </div><!-- end sticky-nav-wrapper -->
+
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
@@ -253,6 +257,10 @@ const localBusinessLd = {
 
       <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ. Με επιφύλαξη παντός δικαιώματος.</p>
+        <a href="https://www.tapitokatharistes.gr/" target="_blank" rel="noopener noreferrer" class="footer-somateo" aria-label="Σωματείο Ταπητοκαθαριστηρίων Η ΑΤΤΙΚΗ">
+          <img src="/images/somateo-badge.png" alt="Μέλος Σωματείου Ταπητοκαθαριστηρίων Η ΑΤΤΙΚΗ" width="140" height="28">
+          <span>Μέλος Σωματείου</span>
+        </a>
       </div>
     </div>
   </footer>
@@ -402,10 +410,13 @@ const localBusinessLd = {
   }
 
   /* ===== Header ===== */
-  .site-header {
+  .sticky-nav-wrapper {
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+  .site-header {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -786,7 +797,24 @@ const localBusinessLd = {
     font-size: var(--text-xs);
     color: var(--color-text-muted);
   }
-
+  .footer-somateo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+  }
+  .footer-somateo:hover { opacity: 1; }
+  .footer-somateo img {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+  }
+  .footer-somateo span {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
 
   @media (max-width: 768px) {
     .footer-grid {
