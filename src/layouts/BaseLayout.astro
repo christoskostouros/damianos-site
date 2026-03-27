@@ -266,22 +266,14 @@ const localBusinessLd = {
   </footer>
 
   <script is:inline>
-    // Top bar hide on scroll
-    const topBar = document.getElementById('top-bar');
+    // Add shadow on scroll
     const header = document.getElementById('site-header');
-    let lastScroll = 0;
-    let topBarHeight = topBar.offsetHeight;
-
     window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > topBarHeight) {
-        topBar.classList.add('hidden');
+      if (window.scrollY > 10) {
         header.classList.add('scrolled');
       } else {
-        topBar.classList.remove('hidden');
         header.classList.remove('scrolled');
       }
-      lastScroll = currentScroll;
     }, { passive: true });
 
     // Mobile menu
@@ -344,13 +336,6 @@ const localBusinessLd = {
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 101;
     position: relative;
-  }
-  .top-bar.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
   }
   .top-bar-inner {
     display: flex;
