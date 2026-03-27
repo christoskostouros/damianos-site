@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Carpet Cleaning",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Αττική, Ελλάδα"
+  },
+  "description": "Χειρονακτικός υγρός καθαρισμός ταπήτων με παραδοσιακές μεθόδους. 6 βήματα: σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμός κροσιών, στύψιμο, στέγνωμα."
+};
+---
+
+<BaseLayout
+  title="Καθαρισμός Ταπήτων | ΔΑΜΙΑΝΟΣ – Χειροποίητο Ριζικό Πλύσιμο"
+  description="Χειρονακτικός υγρός καθαρισμός ταπήτων με παραδοσιακές μεθόδους. 6 βήματα: σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμός κροσιών, στύψιμο, στέγνωμα."
+  jsonLd={serviceSchema}
+>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Υπηρεσίες</span>
+      <h1 class="page-hero-title">Καθαρισμός Ταπήτων</h1>
+      <p class="page-hero-subtitle">Χειρονακτικός υγρός καθαρισμός με παραδοσιακές μεθόδους — ριζικό πλύσιμο εις βάθος.</p>
+    </div>
+  </section>
+
+  <section class="svc-page section-padding">
+    <div class="container">
+      <div class="svc-intro">
+        <p>Ο καθαρισμός χαλιών γίνεται αυστηρά με χειρονακτικό τρόπο, σύμφωνα με τις παραδοσιακές μεθόδους που διδαχθήκαμε από τους παλαιότερους συναδέλφους μας. Τα χαλιά πλένονται ριζικά με άφθονο νερό, που διοχετεύεται στο χαλί και από την κάτω του πλευρά, ώστε η σκόνη και η βρώμα να αποβάλλονται εις βάθος και όχι απλά επιφανειακά.</p>
+      </div>
+
+      <h2 class="svc-subtitle">Η Διαδικασία Βήμα-Βήμα</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Σαπούνισμα</h4>
+            <p>Χρήση ειδικής σκόνης σαπουνιού, ιδανικής για όλους τους τύπους ταπήτων και ανάδειξη χρωμάτων.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Τρίψιμο</h4>
+            <p>Χειροκίνητη περιστροφική μηχανή με ειδική βούρτσα — επιμονή στα πιο «ταλαιπωρημένα» σημεία.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Ξέβγαλμα</h4>
+            <p>Σχολαστικό ξέβγαλμα με χρήση κέλμπερι (παραδοσιακό χειροκίνητο εργαλείο) που «χτενίζει» τον πέλο και ισιώνει τσαλακώματα.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Καθαρισμός Κροσιών</h4>
+            <p>Πιεστικό μηχάνημα νερού (χωρίς χημικά) για κάθε λεπτομέρεια στα κρόσια.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Στύψιμο</h4>
+            <p>Σύγχρονο φυγοκεντρικό μηχάνημα — αποφυγή ξεβαμμάτων, διατήρηση ζωντανών χρωμάτων.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h4>Στέγνωμα</h4>
+            <p>Φυσικά αεριζόμενος στεγασμένος χώρος, μακριά από ηλιακές ακτίνες.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="process-note">Το τέλειο αποτέλεσμα επιτυγχάνεται μόνο από εξειδικευμένη ανθρώπινη προσπάθεια, με χειρονακτικό τρόπο.</p>
+
+      <div class="svc-pricing-cta">
+        <div class="svc-pricing-card svc-pricing-card--main">
+          <span class="svc-pricing-badge">Κύρια Υπηρεσία</span>
+          <h4>Ριζικό Πλύσιμο Χειροποίητων Χαλιών</h4>
+          <p>Χειρονακτικός υγρός καθαρισμός με παραδοσιακές μεθόδους. Περιλαμβάνει σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμό κροσιών, στύψιμο και στέγνωμα.</p>
+          <div class="svc-pricing-price">
+            <span class="svc-pricing-from">Από</span>
+            <span class="svc-pricing-amount">8€</span>
+            <span class="svc-pricing-unit">/τ.μ.*</span>
+          </div>
+          <a href="tel:+302102776365" class="btn btn--primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Καλέστε για Εκτίμηση
+          </a>
+        </div>
+        <div class="svc-pricing-extras">
+          <div class="svc-pricing-card svc-pricing-card--small">
+            <h4>Πλύσιμο Κουβέρτας</h4>
+            <p>Μονή / Διπλή</p>
+            <div class="svc-pricing-price">
+              <span class="svc-pricing-amount svc-pricing-amount--sm">15€</span>
+              <span class="svc-pricing-unit">/τεμ. + ΦΠΑ</span>
+            </div>
+          </div>
+          <div class="svc-pricing-card svc-pricing-card--small">
+            <h4>Πλύσιμο Παπλώματος</h4>
+            <p>Μονό / Διπλό</p>
+            <div class="svc-pricing-price">
+              <span class="svc-pricing-amount svc-pricing-amount--sm">18€</span>
+              <span class="svc-pricing-unit">/τεμ. + ΦΠΑ</span>
+            </div>
+          </div>
+        </div>
+        <p class="svc-pricing-note">* Στην τιμή δεν συμπεριλαμβάνεται ΦΠΑ 24%</p>
+      </div>
+
+      <div class="svc-cta-inline">
+        <p>Κλείστε ραντεβού παραλαβής τηλεφωνικά:</p>
+        <a href="tel:+302102776365" class="btn btn--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          210 27 76 365
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--color-cream);
+    padding: var(--space-24) 0 var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+  .page-hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+
+  .svc-page {
+    background: var(--color-bg);
+  }
+
+  .svc-intro p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-6);
+    max-width: 72ch;
+  }
+  .svc-subtitle {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-6);
+    color: var(--color-text);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+  .process-step {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    align-items: flex-start;
+  }
+  .step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    line-height: 1;
+  }
+  .step-content h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+  .step-content p {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  .process-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-left: 3px solid var(--color-gold);
+    padding-left: var(--space-4);
+    max-width: 600px;
+    margin-bottom: var(--space-8);
+  }
+
+  .svc-pricing-cta {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+  .svc-pricing-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+  }
+  .svc-pricing-card--main {
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-surface) 100%);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+  }
+  .svc-pricing-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+  }
+  .svc-pricing-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .svc-pricing-card > p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    max-width: 52ch;
+  }
+  .svc-pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+  }
+  .svc-pricing-from {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .svc-pricing-amount {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+  .svc-pricing-amount--sm {
+    font-size: var(--text-xl);
+  }
+  .svc-pricing-unit {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .svc-pricing-extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  .svc-pricing-card--small {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+  }
+  .svc-pricing-card--small h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-1);
+  }
+  .svc-pricing-card--small > p {
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-2);
+  }
+  .svc-pricing-card--small .svc-pricing-price {
+    margin-bottom: 0;
+  }
+  .svc-pricing-note {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-3);
+  }
+
+  .svc-cta-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-8);
+  }
+  .svc-cta-inline p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .process-steps { grid-template-columns: 1fr; }
+    .svc-pricing-extras { grid-template-columns: 1fr; }
+    .svc-cta-inline { flex-direction: column; align-items: flex-start; }
+  }
+</style>

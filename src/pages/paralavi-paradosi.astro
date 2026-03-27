@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Pickup and Delivery",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Αττική, Ελλάδα"
+  },
+  "description": "Παραλαβή και παράδοση ταπήτων με ιδιόκτητα μεταφορικά μέσα σε όλο το λεκανοπέδιο Αττικής. Δωρεάν μεταφορά Απρίλιο-Δεκέμβριο."
+};
+---
+
+<BaseLayout
+  title="Παραλαβή & Παράδοση Χαλιών | ΔΑΜΙΑΝΟΣ – Δωρεάν Μεταφορά Αττική"
+  description="Παραλαβή και παράδοση ταπήτων με ιδιόκτητα μεταφορικά μέσα σε όλο το λεκανοπέδιο Αττικής. Δωρεάν μεταφορά Απρίλιο-Δεκέμβριο."
+  jsonLd={serviceSchema}
+>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Υπηρεσίες</span>
+      <h1 class="page-hero-title">Παραλαβή & Παράδοση</h1>
+      <p class="page-hero-subtitle">Δωρεάν μεταφορά με ιδιόκτητα μέσα σε όλο το λεκανοπέδιο Αττικής.</p>
+    </div>
+  </section>
+
+  <section class="svc-page section-padding">
+    <div class="container">
+      <p class="svc-text">Η παραλαβή και παράδοση των ταπήτων γίνεται με ιδιόκτητα μεταφορικά μέσα, κατόπιν ραντεβού και στο συντομότερο δυνατόν χρόνο από τη στιγμή της ειδοποίησής σας.</p>
+
+      <div class="delivery-grid">
+        <div class="delivery-card">
+          <span class="delivery-tag delivery-tag--green">Υψηλή Κίνηση</span>
+          <h4>Απρίλιος – Δεκέμβριος</h4>
+          <p>Δωρεάν μεταφορά σε μαζικά δρομολόγια σε όλο το λεκανοπέδιο Αττικής.</p>
+        </div>
+        <div class="delivery-card">
+          <span class="delivery-tag delivery-tag--muted">Χαμηλή Κίνηση</span>
+          <h4>Ιανουάριος – Μάρτιος</h4>
+          <p>Ενδέχεται μεταφορικά έξοδα, που ποικίλουν ανάλογα την απόσταση από την έδρα μας.</p>
+        </div>
+      </div>
+
+      <div class="svc-cta-inline">
+        <p>Κλείστε ραντεβού παραλαβής τηλεφωνικά:</p>
+        <a href="tel:+302102776365" class="btn btn--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          210 27 76 365
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--color-cream);
+    padding: var(--space-24) 0 var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+  .page-hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+
+  .svc-page {
+    background: var(--color-bg);
+  }
+
+  .svc-text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-6);
+    max-width: 72ch;
+  }
+
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  .delivery-card {
+    padding: var(--space-5);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .delivery-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .delivery-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+  .delivery-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
+  }
+  .delivery-tag--green { background: rgba(122,158,142,0.15); color: #3B6B55; }
+  .delivery-tag--muted { background: var(--color-cream); color: var(--color-text-muted); }
+
+  .svc-cta-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+  .svc-cta-inline p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .delivery-grid { grid-template-columns: 1fr; }
+    .svc-cta-inline { flex-direction: column; align-items: flex-start; }
+  }
+</style>

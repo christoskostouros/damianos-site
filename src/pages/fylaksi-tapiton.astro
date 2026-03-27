@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Carpet Storage",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Αττική, Ελλάδα"
+  },
+  "description": "Ασφαλής φύλαξη ταπήτων σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο. Δωρεάν φύλαξη σε συνδυασμό με καθαρισμό."
+};
+---
+
+<BaseLayout
+  title="Φύλαξη Ταπήτων | ΔΑΜΙΑΝΟΣ – Ασφαλής Αποθήκευση Χαλιών"
+  description="Ασφαλής φύλαξη ταπήτων σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο. Δωρεάν φύλαξη σε συνδυασμό με καθαρισμό."
+  jsonLd={serviceSchema}
+>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Υπηρεσίες</span>
+      <h1 class="page-hero-title">Φύλαξη Ταπήτων</h1>
+      <p class="page-hero-subtitle">Ασφαλής φύλαξη σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο.</p>
+    </div>
+  </section>
+
+  <section class="svc-page section-padding">
+    <div class="container">
+      <p class="svc-text">Η φύλαξη των ταπήτων γίνεται στις σύγχρονες ιδιόκτητες εγκαταστάσεις μας στο Νέο Ηράκλειο. Τα χαλιά είναι απολύτως ασφαλή και φυλάσσονται σε ειδικά ράφια μέσα σε νάιλον θήκη, κάτω από τις καταλληλότερες συνθήκες.</p>
+
+      <div class="svc-highlight">
+        <strong>Δωρεάν φύλαξη</strong> σε συνδυασμό με τον καθαρισμό, μέχρι τις 31 Δεκεμβρίου του έτους που παραδόθηκαν σε εμάς.
+      </div>
+
+      <p class="svc-text">Μετά την παρέλευση της συγκεκριμένης ημερομηνίας και την υποχρεωτική εξόφληση του λογαριασμού καθαρισμού τους, υπολογίζονται χρεωστικά φυλάξεως (ισχύουσα τιμή / τετραγωνικό μέτρο + Φ.Π.Α.).</p>
+
+      <div class="svc-features">
+        <div class="svc-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Ειδικά ράφια αποθήκευσης</span>
+        </div>
+        <div class="svc-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Νάιλον θήκη προστασίας</span>
+        </div>
+        <div class="svc-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Κατάλληλες συνθήκες θερμοκρασίας & υγρασίας</span>
+        </div>
+        <div class="svc-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-sage)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>800 τ.μ. ιδιόκτητες εγκαταστάσεις</span>
+        </div>
+      </div>
+
+      <div class="svc-cta-inline">
+        <p>Κλείστε ραντεβού τηλεφωνικά:</p>
+        <a href="tel:+302102776365" class="btn btn--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          210 27 76 365
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--color-cream);
+    padding: var(--space-24) 0 var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+  .page-hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+
+  .svc-page {
+    background: var(--color-bg);
+  }
+
+  .svc-text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: var(--space-4);
+    max-width: 72ch;
+  }
+
+  .svc-highlight {
+    background: var(--color-cream);
+    border-left: 3px solid var(--color-sage);
+    padding: var(--space-4) var(--space-6);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .svc-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .svc-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+  .svc-feature svg {
+    flex-shrink: 0;
+  }
+
+  .svc-cta-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-8);
+  }
+  .svc-cta-inline p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .svc-features { grid-template-columns: 1fr; }
+    .svc-cta-inline { flex-direction: column; align-items: flex-start; }
+  }
+</style>
