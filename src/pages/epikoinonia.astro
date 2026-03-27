@@ -61,7 +61,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <div>
                   <strong>Διεύθυνση</strong>
-                  <p>Σαρανταπόρου 27, Νέο Ηράκλειο<br>Τ.Κ. 141-21</p>
+                  <p><a href="https://maps.app.goo.gl/QvRyJGtVBXvFkNaH6" target="_blank" rel="noopener noreferrer">Σαρανταπόρου 27, Νέο Ηράκλειο<br>Τ.Κ. 141-21</a></p>
                 </div>
               </div>
 
@@ -84,6 +84,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
               </div>
             </div>
+
+            <div class="info-hours">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Ωράριο Λειτουργίας</strong>
+                <p>Δευτέρα - Παρασκευή: 08:00 - 17:00</p>
+                <p>Σάββατο: Κατόπιν ραντεβού</p>
+                <p>Κυριακή: Κλειστά</p>
+              </div>
+            </div>
+
+            <a href="https://maps.app.goo.gl/QvRyJGtVBXvFkNaH6" target="_blank" rel="noopener noreferrer" class="btn btn--outline info-gmb-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Δείτε μας στο Google Maps
+            </a>
           </div>
 
           <!-- Map -->
@@ -251,6 +266,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .info-item a {
     color: var(--color-primary);
     font-weight: 600;
+  }
+
+  /* Hours */
+  .info-hours {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-5);
+    background: var(--color-cream);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: var(--space-6);
+  }
+  .info-hours svg { flex-shrink: 0; margin-top: 2px; }
+  .info-hours strong {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .info-hours p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-1);
+  }
+  .info-hours p:last-child { margin-bottom: 0; }
+  .info-gmb-btn {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--space-6);
   }
 
   /* Map */

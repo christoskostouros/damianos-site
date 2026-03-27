@@ -23,32 +23,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="timeline-line"></div>
 
         <div class="timeline-item timeline-item--left reveal">
-          <div class="timeline-year">1980</div>
           <div class="timeline-card">
+            <span class="timeline-year">1980</span>
             <h3>Η Ίδρυση</h3>
             <p>Ίδρυση της εταιρίας στη Νέα Ιωνία Αττικής από τον Δαμιανό Βογιατζόγλου, μετά από πολυετή εμπειρία στην πώληση και τον καθαρισμό χαλιών.</p>
           </div>
         </div>
 
         <div class="timeline-item timeline-item--right reveal">
-          <div class="timeline-year">1996</div>
           <div class="timeline-card">
+            <span class="timeline-year">1996</span>
             <h3>Νέες Εγκαταστάσεις</h3>
             <p>Μεταφορά στις νέες σύγχρονες ιδιόκτητες εγκαταστάσεις στο Νέο Ηράκλειο — 800 τ.μ. με αποθήκες, χώρο πλυσίματος, στεγασμένο απλωτήριο και συσκευαστήριο.</p>
           </div>
         </div>
 
         <div class="timeline-item timeline-item--left reveal">
-          <div class="timeline-year">2004</div>
           <div class="timeline-card">
+            <span class="timeline-year">2004</span>
             <h3>Δεύτερη Γενιά</h3>
             <p>Ο Ιορδάνης Βογιατζόγλου ολοκληρώνει τις σπουδές Marketing και εντάσσεται στην οικογενειακή επιχείρηση, φέρνοντας εκσυγχρονισμό και ανανέωση.</p>
           </div>
         </div>
 
         <div class="timeline-item timeline-item--right reveal">
-          <div class="timeline-year">2020</div>
           <div class="timeline-card">
+            <span class="timeline-year">2020</span>
             <h3>40 Χρόνια Παρουσίας</h3>
             <p>Η επιχείρηση ανταπεξέρχεται πλήρως στην πανδημία, εφαρμόζοντας επιτυχώς όλα τα πρωτόκολλα υγιεινής. 40 χρόνια συνεχούς λειτουργίας.</p>
           </div>
@@ -140,24 +140,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-items: start;
   }
   .timeline-item:last-child { margin-bottom: 0; }
+  /* Year is now INSIDE the card, above the title */
   .timeline-year {
+    display: inline-block;
     font-family: var(--font-display);
-    font-size: var(--text-xl);
+    font-size: var(--text-sm);
     font-weight: 800;
-    color: var(--color-primary);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-bg);
-    padding: var(--space-2) var(--space-3);
-    z-index: 1;
-    line-height: 1;
+    color: #fff;
+    background: var(--color-primary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
   }
   .timeline-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
+    position: relative;
+  }
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border: 3px solid var(--color-bg);
+    border-radius: 50%;
+    top: var(--space-6);
+    z-index: 1;
+  }
+  .timeline-item--left .timeline-card::before {
+    right: calc(-1 * var(--space-8) - 6px);
+  }
+  .timeline-item--right .timeline-card::before {
+    left: calc(-1 * var(--space-8) - 6px);
   }
   .timeline-card h3 {
     font-family: var(--font-display);
@@ -174,18 +193,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .timeline-item--right .timeline-card { grid-column: 2; }
 
   @media (max-width: 768px) {
-    .timeline-line { left: 20px; }
+    .timeline-line { left: 16px; }
     .timeline-item {
       grid-template-columns: 1fr;
-      padding-left: 50px;
-    }
-    .timeline-year {
-      left: 20px;
-      transform: translateX(-50%);
-      font-size: var(--text-lg);
+      padding-left: 44px;
     }
     .timeline-item--left .timeline-card,
     .timeline-item--right .timeline-card { grid-column: 1; }
+    .timeline-card::before {
+      left: calc(-44px + 10px) !important;
+      right: auto !important;
+    }
   }
 
   /* Full-bleed image */

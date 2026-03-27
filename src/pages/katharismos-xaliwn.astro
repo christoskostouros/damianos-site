@@ -13,20 +13,20 @@ const serviceSchema = {
     "@type": "Place",
     "name": "Αττική, Ελλάδα"
   },
-  "description": "Χειρονακτικός υγρός καθαρισμός ταπήτων με παραδοσιακές μεθόδους. 6 βήματα: σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμός κροσιών, στύψιμο, στέγνωμα."
+  "description": "Χειρονακτικός υγρός καθαρισμός χαλιών με παραδοσιακές μεθόδους. 6 βήματα: σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμός κροσιών, στύψιμο, στέγνωμα."
 };
 ---
 
 <BaseLayout
-  title="Καθαρισμός Ταπήτων | ΔΑΜΙΑΝΟΣ – Χειροποίητο Ριζικό Πλύσιμο"
-  description="Χειρονακτικός υγρός καθαρισμός ταπήτων με παραδοσιακές μεθόδους. 6 βήματα: σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμός κροσιών, στύψιμο, στέγνωμα."
+  title="Καθαρισμός Χαλιών | ΔΑΜΙΑΝΟΣ – Χειροποίητο Ριζικό Πλύσιμο"
+  description="Χειρονακτικός υγρός καθαρισμός χαλιών με παραδοσιακές μεθόδους. 6 βήματα: σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμός κροσιών, στύψιμο, στέγνωμα."
   jsonLd={serviceSchema}
 >
 
   <section class="page-hero">
     <div class="container">
       <span class="section-label">Υπηρεσίες</span>
-      <h1 class="page-hero-title">Καθαρισμός Ταπήτων</h1>
+      <h1 class="page-hero-title">Καθαρισμός Χαλιών</h1>
       <p class="page-hero-subtitle">Χειρονακτικός υγρός καθαρισμός με παραδοσιακές μεθόδους — ριζικό πλύσιμο εις βάθος.</p>
     </div>
   </section>
@@ -35,6 +35,30 @@ const serviceSchema = {
     <div class="container">
       <div class="svc-intro">
         <p>Ο καθαρισμός χαλιών γίνεται αυστηρά με χειρονακτικό τρόπο, σύμφωνα με τις παραδοσιακές μεθόδους που διδαχθήκαμε από τους παλαιότερους συναδέλφους μας. Τα χαλιά πλένονται ριζικά με άφθονο νερό, που διοχετεύεται στο χαλί και από την κάτω του πλευρά, ώστε η σκόνη και η βρώμα να αποβάλλονται εις βάθος και όχι απλά επιφανειακά.</p>
+      </div>
+
+      <!-- Photo Gallery Strip -->
+      <div class="process-gallery reveal">
+        <div class="gallery-item">
+          <img src="/images/process-splash-1.jpg" alt="Πλύσιμο χαλιού με νερό" loading="lazy" width="400" height="300">
+          <span class="gallery-caption">Χειρονακτικό πλύσιμο</span>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/process-machine.jpg" alt="Περιστροφική μηχανή καθαρισμού" loading="lazy" width="400" height="300">
+          <span class="gallery-caption">Τρίψιμο με μηχανή</span>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/process-water-1.jpg" alt="Ξέβγαλμα χαλιού με νερό" loading="lazy" width="400" height="300">
+          <span class="gallery-caption">Ξέβγαλμα</span>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/process-splash-2.jpg" alt="Καθαρισμός λεπτομερειών" loading="lazy" width="400" height="300">
+          <span class="gallery-caption">Καθαρισμός κροσιών</span>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/process-centrifuge-1.jpg" alt="Φυγοκεντρικό στύψιμο χαλιού" loading="lazy" width="400" height="300">
+          <span class="gallery-caption">Στύψιμο</span>
+        </div>
       </div>
 
       <h2 class="svc-subtitle">Η Διαδικασία Βήμα-Βήμα</h2>
@@ -163,6 +187,58 @@ const serviceSchema = {
     margin-bottom: var(--space-6);
     max-width: 72ch;
   }
+
+  /* Photo Gallery */
+  .process-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-10);
+  }
+  .gallery-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-2) var(--space-3);
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff;
+    font-size: var(--text-xs);
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    .process-gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5) {
+      display: none;
+    }
+  }
+  @media (max-width: 480px) {
+    .process-gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+    .gallery-item:nth-child(3) {
+      display: none;
+    }
+  }
+
   .svc-subtitle {
     font-family: var(--font-display);
     font-size: var(--text-base);
@@ -182,7 +258,7 @@ const serviceSchema = {
     display: flex;
     gap: var(--space-4);
     padding: var(--space-5);
-    background: var(--color-bg);
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     align-items: flex-start;
@@ -197,8 +273,8 @@ const serviceSchema = {
     font-family: var(--font-display);
     font-size: var(--text-sm);
     font-weight: 700;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    color: #fff;
+    background: var(--color-primary);
     border-radius: 50%;
     line-height: 1;
   }
@@ -293,7 +369,7 @@ const serviceSchema = {
     gap: var(--space-4);
   }
   .svc-pricing-card--small {
-    background: var(--color-bg);
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
   }
   .svc-pricing-card--small h4 {
