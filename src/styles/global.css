@@ -25,9 +25,9 @@
   --space-32: 8rem;
 
   /* Color Palette — Heritage Craft Meets Modern Trust */
-  --color-primary:    #B5372A;
-  --color-primary-hover: #9A2E23;
-  --color-primary-light: #D4564A;
+  --color-primary:    #1A4B8C;
+  --color-primary-hover: #133A6E;
+  --color-primary-light: #3A6DB5;
   --color-bg:         #FAF8F5;
   --color-surface:    #FFFFFF;
   --color-text:       #1F2937;
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
 
 ::selection {
-  background: rgba(181, 55, 42, 0.15);
+  background: rgba(26, 75, 140, 0.15);
   color: var(--color-text);
 }
 
