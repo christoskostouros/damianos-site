@@ -104,8 +104,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p>Το 2015, υπό την αιγίδα της ΓΣΕΒΕΕ, αποκτήσαμε την πιστοποίηση της TUV Austria Hellas ως <strong>Καθαριστές Ταπήτων και Ταπετσαριών</strong>, σύμφωνα με τον Ειδικό Κανονισμό Πιστοποίησης (QRc_PCD_008).</p>
           <p>Η πιστοποίηση αυτή επιβεβαιώνει την επαγγελματική μας επάρκεια και τις δεξιότητές μας στον εξειδικευμένο καθαρισμό ταπήτων, αποδεικνύοντας τη δέσμευσή μας στην ποιότητα και τον επαγγελματισμό.</p>
         </div>
-        <div class="tuv-image">
-          <img src="/images/tuv-certificate.jpg" alt="Πιστοποιητικό TUV Austria - Καθαριστές Ταπήτων και Ταπετσαριών" loading="lazy" width="918" height="1368">
+        <div class="tuv-images">
+          <a href="/images/tuv-certificate-1.jpg" target="_blank" class="tuv-img-link">
+            <img src="/images/tuv-certificate-1.jpg" alt="Πιστοποιητικό TUV Austria (1)" loading="lazy" width="900" height="1369">
+          </a>
+          <a href="/images/tuv-certificate-2.jpg" target="_blank" class="tuv-img-link">
+            <img src="/images/tuv-certificate-2.jpg" alt="Πιστοποιητικό TUV Austria (2)" loading="lazy" width="900" height="1369">
+          </a>
         </div>
       </div>
     </div>
@@ -290,22 +295,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: var(--space-4);
     max-width: 55ch;
   }
-  .tuv-image {
-    display: flex;
-    justify-content: center;
+  .tuv-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
   }
-  .tuv-image img {
-    max-height: 500px;
-    width: auto;
+  .tuv-img-link {
+    display: block;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tuv-img-link:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+  .tuv-img-link img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   @media (max-width: 768px) {
     .philosophy-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     .philosophy-sidebar { position: static; }
     .tuv-content { grid-template-columns: 1fr; gap: var(--space-6); }
-    .tuv-image img { max-height: 400px; }
+    .tuv-images { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   }
 </style>
