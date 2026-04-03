@@ -94,6 +94,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- TUV Certification -->
+  <section class="tuv-section section-padding">
+    <div class="container">
+      <div class="tuv-content reveal">
+        <div class="tuv-text">
+          <span class="section-label">Πιστοποίηση</span>
+          <h2 class="section-title">Πιστοποιημένοι από την TUV Austria</h2>
+          <p>Το 2015, υπό την αιγίδα της ΓΣΕΒΕΕ, αποκτήσαμε την πιστοποίηση της TUV Austria Hellas ως <strong>Καθαριστές Ταπήτων και Ταπετσαριών</strong>, σύμφωνα με τον Ειδικό Κανονισμό Πιστοποίησης (QRc_PCD_008).</p>
+          <p>Η πιστοποίηση αυτή επιβεβαιώνει την επαγγελματική μας επάρκεια και τις δεξιότητές μας στον εξειδικευμένο καθαρισμό ταπήτων, αποδεικνύοντας τη δέσμευσή μας στην ποιότητα και τον επαγγελματισμό.</p>
+        </div>
+        <div class="tuv-image">
+          <img src="/images/tuv-certificate.jpg" alt="Πιστοποιητικό TUV Austria - Καθαριστές Ταπήτων και Ταπετσαριών" loading="lazy" width="918" height="1368">
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
@@ -256,8 +273,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-left: 3px solid var(--color-primary);
   }
 
+  /* TUV Section */
+  .tuv-section {
+    background: var(--color-bg);
+  }
+  .tuv-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+  .tuv-text p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    max-width: 55ch;
+  }
+  .tuv-image {
+    display: flex;
+    justify-content: center;
+  }
+  .tuv-image img {
+    max-height: 500px;
+    width: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+  }
+
   @media (max-width: 768px) {
     .philosophy-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     .philosophy-sidebar { position: static; }
+    .tuv-content { grid-template-columns: 1fr; gap: var(--space-6); }
+    .tuv-image img { max-height: 400px; }
   }
 </style>
