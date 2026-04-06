@@ -2,6 +2,8 @@ backend:
   name: github
   repo: christoskostouros/damianos-site
   branch: main
+  base_url: https://plisimotapiton.gr
+  auth_endpoint: /admin/
 
 media_folder: "public/images"
 public_folder: "/images"
