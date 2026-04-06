@@ -97,22 +97,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- TUV Certification -->
   <section class="tuv-section section-padding">
     <div class="container">
-      <div class="tuv-content reveal">
-        <div class="tuv-text">
-          <span class="section-label">Πιστοποίηση</span>
-          <h2 class="section-title">Πιστοποιημένοι από την TUV Austria</h2>
-          <p>Το 2015, υπό την αιγίδα της ΓΣΕΒΕΕ, αποκτήσαμε την πιστοποίηση της TUV Austria Hellas ως <strong>Καθαριστές Ταπήτων και Ταπετσαριών</strong>, σύμφωνα με τον Ειδικό Κανονισμό Πιστοποίησης (QRc_PCD_008).</p>
-          <p>Η πιστοποίηση αυτή επιβεβαιώνει την επαγγελματική μας επάρκεια και τις δεξιότητές μας στον εξειδικευμένο καθαρισμό ταπήτων, αποδεικνύοντας τη δέσμευσή μας στην ποιότητα και τον επαγγελματισμό.</p>
-        </div>
-        <div class="tuv-images">
-          <a href="/images/tuv-certificate-1.jpg" target="_blank" class="tuv-img-link">
-            <img src="/images/tuv-certificate-1.jpg" alt="Πιστοποιητικό TUV Austria (1)" loading="lazy" width="900" height="1369">
-          </a>
-          <a href="/images/tuv-certificate-2.jpg" target="_blank" class="tuv-img-link">
-            <img src="/images/tuv-certificate-2.jpg" alt="Πιστοποιητικό TUV Austria (2)" loading="lazy" width="900" height="1369">
-          </a>
-        </div>
-      </div>
+      <img
+        src="/images/tuv-section-screenshot.jpg"
+        alt="Πιστοποιημένοι από την TUV Austria Hellas - Καθαριστές Ταπήτων 2015"
+        class="tuv-screenshot reveal"
+        loading="lazy"
+        width="1280"
+        height="364"
+      >
     </div>
   </section>
 
@@ -282,46 +274,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .tuv-section {
     background: var(--color-bg);
   }
-  .tuv-content {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: var(--space-12);
-    align-items: center;
-  }
-  .tuv-text p {
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    margin-bottom: var(--space-4);
-    max-width: 55ch;
-  }
-  .tuv-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-  }
-  .tuv-img-link {
-    display: block;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .tuv-img-link:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-lg);
-  }
-  .tuv-img-link img {
+  .tuv-screenshot {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: var(--radius-lg);
   }
 
   @media (max-width: 768px) {
     .philosophy-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     .philosophy-sidebar { position: static; }
-    .tuv-content { grid-template-columns: 1fr; gap: var(--space-6); }
-    .tuv-images { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   }
 </style>
