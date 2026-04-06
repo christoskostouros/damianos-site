@@ -142,6 +142,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- TUV Trust Section -->
+  <section class="tuv-trust section-padding reveal">
+    <div class="container">
+      <div class="tuv-trust-inner">
+        <div class="tuv-trust-text">
+          <span class="section-label">Πιστοποίηση</span>
+          <h2 class="section-title">Πιστοποιημένοι από την TUV Austria</h2>
+          <p>To 2015, υπό την αιγίδα της ΓΣΕΒΕΕ, αποκτήσαμε την πιστοποίηση της TUV Austria Hellas ως <strong>Καθαριστές Ταπήτων και Ταπετσαριών</strong>, αποδεικνύοντας την επαγγελματική μας επάρκεια και τη δέσμευσή μας στην ποιότητα και τον επαγγελματισμό.</p>
+          <a href="/etairia" class="btn btn--outline">Περισσότερα για εμάς</a>
+        </div>
+        <div class="tuv-trust-certs">
+          <a href="/images/tuv-certificate-1.jpg" target="_blank" class="tuv-cert-thumb">
+            <img src="/images/tuv-certificate-1.jpg" alt="Πιστοποιητικό TUV Austria (1)" loading="lazy" width="900" height="1369">
+          </a>
+          <a href="/images/tuv-certificate-2.jpg" target="_blank" class="tuv-cert-thumb">
+            <img src="/images/tuv-certificate-2.jpg" alt="Πιστοποιητικό TUV Austria (2)" loading="lazy" width="900" height="1369">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Preview -->
   <section class="services-preview">
     <div class="services-image-band">
@@ -480,6 +502,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .value-card--1 {
       background: linear-gradient(160deg, var(--color-surface) 0%, var(--color-cream) 100%);
+    }
+  }
+
+  /* ===== TUV Trust Section ===== */
+  .tuv-trust {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tuv-trust-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+  .tuv-trust-text p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+    max-width: 52ch;
+  }
+  .tuv-trust-certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+  .tuv-cert-thumb {
+    display: block;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tuv-cert-thumb:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+  }
+  .tuv-cert-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .tuv-trust-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    .tuv-trust-certs {
+      max-width: 400px;
     }
   }
 
