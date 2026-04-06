@@ -1,0 +1,80 @@
+Options -Indexes
+RewriteEngine On
+
+# www → non-www (canonical)
+RewriteCond %{HTTP_HOST} ^www\.plisimotapiton\.gr [NC]
+RewriteRule ^(.*)$ https://plisimotapiton.gr/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ── Old WordPress URLs → New Astro URLs ────────────────────────────────────
+
+# Old: /υπηρεσίες/καθαρισμός-χαλιών/ → /katharismos-xaliwn/
+RewriteRule ^%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82/%ce%ba%ce%b1%ce%b8%ce%b1%cf%81%ce%b9%cf%83%ce%bc%cf%8c%cf%82-%cf%87%ce%b1%ce%bb%ce%b9%cf%8e%ce%bd/?$ /katharismos-xaliwn/ [R=301,L,NC]
+RewriteRule ^(υπηρεσίες|%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82)/(καθαρισμός-χαλιών|%ce%ba%ce%b1%ce%b8%ce%b1%cf%81%ce%b9%cf%83%ce%bc%cf%8c%cf%82-%cf%87%ce%b1%ce%bb%ce%b9%cf%8e%ce%bd)/?$ /katharismos-xaliwn/ [R=301,L,NE]
+
+# Old: /υπηρεσίες/φύλαξη-χαλιών/ → /fylaksi-tapiton/
+RewriteRule ^%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82/%cf%86%cf%8d%ce%bb%ce%b1%ce%be%ce%b7-%cf%87%ce%b1%ce%bb%ce%b9%cf%8e%ce%bd/?$ /fylaksi-tapiton/ [R=301,L,NC]
+
+# Old: /υπηρεσίες/στύψιμο-στέγνωμα-χαλιών/ → /katharismos-xaliwn/
+RewriteRule ^%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82/%cf%83%cf%84%cf%8d%cf%88%ce%b9%ce%bc%ce%bf-%cf%83%cf%84%ce%ad%ce%b3%ce%bd%cf%89%ce%bc%ce%b1-%cf%87%ce%b1%ce%bb%ce%b9%cf%8e%ce%bd/?$ /katharismos-xaliwn/ [R=301,L,NC]
+
+# Old: /υπηρεσίες/επισκευές-χαλιών/ → /episkeves-xalion/
+RewriteRule ^%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82/%ce%b5%cf%80%ce%b9%cf%83%ce%ba%ce%b5%cf%85%ce%ad%cf%82-%cf%87%ce%b1%ce%bb%ce%b9%cf%8e%ce%bd/?$ /episkeves-xalion/ [R=301,L,NC]
+
+# Old: /υπηρεσίες/παραλαβή-παράδοση-χαλιών/ → /paralavi-paradosi/
+RewriteRule ^%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82/%cf%80%ce%b1%cf%81%ce%b1%ce%bb%ce%b1%ce%b2%ce%ae-%cf%80%ce%b1%cf%81%ce%ac%ce%b4%ce%bf%cf%83%ce%b7-%cf%87%ce%b1%ce%bb%ce%b9%cf%8e%ce%bd/?$ /paralavi-paradosi/ [R=301,L,NC]
+
+# Old: /ιστορία-του-χαλιού/ → /istoria-xaliou/
+RewriteRule ^%ce%b9%cf%83%cf%84%ce%bf%cf%81%ce%af%ce%b1-%cf%84%ce%bf%cf%85-%cf%87%ce%b1%ce%bb%ce%b9%ce%bf%cf%8d/?$ /istoria-xaliou/ [R=301,L,NC]
+
+# Old: /Προφίλ/ → /etairia/
+RewriteRule ^%CE%A0%CF%81%CE%BF%CF%86%CE%AF%CE%BB/?$ /etairia/ [R=301,L,NC]
+RewriteRule ^Profil/?$ /etairia/ [R=301,L,NC]
+
+# Old: /συχνές-ερωτήσεις/ → /syxnes-erotiseis/
+RewriteRule ^%cf%83%cf%85%cf%87%ce%bd%ce%ad%cf%82-%ce%b5%cf%81%cf%89%cf%84%ce%ae%cf%83%ce%b5%ce%b9%cf%82/?$ /syxnes-erotiseis/ [R=301,L,NC]
+
+# Old: /Επικοινωνία/ → /epikoinonia/
+RewriteRule ^%CE%95%CF%80%CE%B9%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%AF%CE%B1/?$ /epikoinonia/ [R=301,L,NC]
+
+# Old generic: /υπηρεσίες/ → /katharismos-xaliwn/ (services index)
+RewriteRule ^%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82/?$ /katharismos-xaliwn/ [R=301,L,NC]
+
+# ── Astro clean URLs (no .html extension) ──────────────────────────────────
+# Serve /page/ → /page/index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
+
+# If folder exists but no trailing slash, add it
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [R=301,L]
+
+# Serve directory index
+DirectoryIndex index.html
+
+# ── Security & Performance ──────────────────────────────────────────────────
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Error pages
+ErrorDocument 404 /index.html
