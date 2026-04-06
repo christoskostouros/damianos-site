@@ -97,14 +97,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- TUV Certification -->
   <section class="tuv-section section-padding">
     <div class="container">
-      <img
-        src="/images/tuv-section-screenshot.jpg"
-        alt="Πιστοποιημένοι από την TUV Austria Hellas - Καθαριστές Ταπήτων 2015"
-        class="tuv-screenshot reveal"
-        loading="lazy"
-        width="1280"
-        height="364"
-      >
+      <div class="tuv-content reveal">
+        <div class="tuv-text">
+          <span class="section-label">Πιστοποίηση</span>
+          <h2 class="section-title">Πιστοποιημένοι από την TUV Austria</h2>
+          <p>Το 2015, υπό την αιγίδα της ΓΣΕΒΕΕ, αποκτήσαμε την πιστοποίηση της TUV Austria Hellas ως <strong>Καθαριστές Ταπήτων και Ταπετσαριών</strong>, σύμφωνα με τον Ειδικό Κανονισμό Πιστοποίησης (QRc_PCD_008).</p>
+          <p>Η πιστοποίηση αυτή επιβεβαιώνει την επαγγελματική μας επάρκεια και τις δεξιότητές μας στον εξειδικευμένο καθαρισμό ταπήτων, αποδεικνύοντας τη δέσμευσή μας στην ποιότητα και τον επαγγελματισμό.</p>
+        </div>
+        <div class="tuv-image-wrap">
+          <img src="/images/tuv-composite.jpg" alt="Πιστοποιητικά TUV Austria Hellas - Καθαριστές Ταπήτων" loading="lazy" width="720" height="520">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -271,18 +274,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   /* TUV Section */
-  .tuv-section {
-    background: var(--color-bg);
+  .tuv-section { background: var(--color-bg); }
+  .tuv-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-12);
+    align-items: center;
   }
-  .tuv-screenshot {
+  .tuv-text p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    max-width: 55ch;
+  }
+  .tuv-image-wrap img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
   }
 
   @media (max-width: 768px) {
     .philosophy-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     .philosophy-sidebar { position: static; }
+    .tuv-content { grid-template-columns: 1fr; gap: var(--space-6); }
   }
 </style>
