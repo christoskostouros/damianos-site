@@ -2,46 +2,92 @@ backend:
   name: github
   repo: christoskostouros/damianos-site
   branch: main
-  base_url: https://plisimotapiton.gr
-  auth_endpoint: /admin/
 
 media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Σελίδες"
+
+  # ─── Αρχική ───────────────────────────────────────────────
+  - name: "home"
+    label: "🏠 Αρχική Σελίδα"
     files:
       - label: "Αρχική"
         name: "home"
-        file: "src/content/home.md"
+        file: "src/content/pages/home.md"
         fields:
-          - {label: "Τίτλος Hero", name: "heroTitle", widget: "string"}
-          - {label: "Υπότιτλος Hero", name: "heroSubtitle", widget: "text"}
-          - {label: "SEO Title", name: "seoTitle", widget: "string"}
-          - {label: "SEO Description", name: "seoDescription", widget: "text"}
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string", default: "Ταπητοκαθαριστήρια ΔΑΜΙΑΝΟΣ | Χειροποίητο Πλύσιμο Χαλιών από το 1980" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Hero — Κύριος Τίτλος", name: "heroTitle", widget: "string", default: "Χειροποίητο Ριζικό Πλύσιμο Ταπήτων" }
+          - { label: "Hero — Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - { label: "About — Τίτλος", name: "aboutTitle", widget: "string" }
+          - { label: "About — Κείμενο", name: "aboutText", widget: "markdown" }
+
+  # ─── Εταιρία ──────────────────────────────────────────────
+  - name: "company"
+    label: "🏢 Εταιρία"
+    files:
       - label: "Εταιρία"
         name: "company"
-        file: "src/content/company.md"
+        file: "src/content/pages/company.md"
         fields:
-          - {label: "Τίτλος", name: "title", widget: "string"}
-          - {label: "Περιεχόμενο", name: "body", widget: "markdown"}
-          - {label: "SEO Title", name: "seoTitle", widget: "string"}
-          - {label: "SEO Description", name: "seoDescription", widget: "text"}
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Φιλοσοφία — Τίτλος", name: "philosophyTitle", widget: "string" }
+          - { label: "Φιλοσοφία — Κείμενο", name: "philosophyText", widget: "markdown" }
+
+  # ─── Προσφορές ────────────────────────────────────────────
+  - name: "offers"
+    label: "🏷️ Προσφορές"
+    files:
       - label: "Προσφορές"
         name: "offers"
-        file: "src/content/offers.md"
+        file: "src/content/pages/offers.md"
         fields:
-          - {label: "Τίτλος", name: "title", widget: "string"}
-          - {label: "Περιεχόμενο", name: "body", widget: "markdown"}
-          - {label: "SEO Title", name: "seoTitle", widget: "string"}
-          - {label: "SEO Description", name: "seoDescription", widget: "text"}
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - label: "Τιμή Χαλιών (€/τ.μ.)"
+            name: "priceRug"
+            widget: "string"
+            default: "8"
+          - label: "Τιμή Κουβέρτας (€/τεμ.)"
+            name: "priceBlanket"
+            widget: "string"
+            default: "15"
+          - label: "Τιμή Παπλώματος (€/τεμ.)"
+            name: "priceDuvet"
+            widget: "string"
+            default: "18"
+          - label: "Κείμενο Προσφοράς"
+            name: "offerText"
+            widget: "markdown"
+
+  # ─── Συχνές Ερωτήσεις ─────────────────────────────────────
   - name: "faq"
-    label: "Συχνές Ερωτήσεις"
+    label: "❓ Συχνές Ερωτήσεις"
     folder: "src/content/faq"
     create: true
-    slug: "{{slug}}"
+    slug: "{{order}}-{{slug}}"
+    summary: "{{order}}. {{question}}"
+    sortable_fields: ["order"]
     fields:
-      - {label: "Ερώτηση", name: "question", widget: "string"}
-      - {label: "Απάντηση", name: "answer", widget: "markdown"}
-      - {label: "Σειρά", name: "order", widget: "number"}
+      - { label: "Ερώτηση", name: "question", widget: "string" }
+      - { label: "Απάντηση", name: "answer", widget: "markdown" }
+      - { label: "Σειρά (1, 2, 3...)", name: "order", widget: "number", default: 1 }
+
+  # ─── Εικόνες / Μέσα ──────────────────────────────────────
+  - name: "media_pages"
+    label: "🖼️ Εικόνες Σελίδων"
+    files:
+      - label: "Φωτογραφίες"
+        name: "images"
+        file: "src/content/pages/home.md"
+        fields:
+          - label: "Hero Background"
+            name: "heroImage"
+            widget: "image"
+            required: false
+          - label: "About Section Photo"
+            name: "aboutImage"
+            widget: "image"
+            required: false
