@@ -6,9 +6,12 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
+# ────────────────────────────────────────────────────────────
 collections:
 
-  # ─── Αρχική ───────────────────────────────────────────────
+  # ══════════════════════════════════════════════
+  # 🏠 ΑΡΧΙΚΗ ΣΕΛΙΔΑ
+  # ══════════════════════════════════════════════
   - name: "home"
     label: "🏠 Αρχική Σελίδα"
     files:
@@ -16,14 +19,26 @@ collections:
         name: "home"
         file: "src/content/pages/home.md"
         fields:
-          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string", default: "Ταπητοκαθαριστήρια ΔΑΜΙΑΝΟΣ | Χειροποίητο Πλύσιμο Χαλιών από το 1980" }
-          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
-          - { label: "Hero — Κύριος Τίτλος", name: "heroTitle", widget: "string", default: "Χειροποίητο Ριζικό Πλύσιμο Ταπήτων" }
-          - { label: "Hero — Υπότιτλος", name: "heroSubtitle", widget: "text" }
-          - { label: "About — Τίτλος", name: "aboutTitle", widget: "string" }
-          - { label: "About — Κείμενο", name: "aboutText", widget: "markdown" }
+          - { label: "SEO Τίτλος (καρτέλα browser)", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή (Google snippet)", name: "seoDescription", widget: "text" }
+          - widget: "object"
+            label: "📸 Hero Section (μεγάλη εικόνα πάνω)"
+            name: "hero"
+            collapsed: false
+            fields:
+              - { label: "Κύριος Τίτλος", name: "heroTitle", widget: "string" }
+              - { label: "Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - widget: "object"
+            label: "📝 About Section (μετά το hero)"
+            name: "about"
+            collapsed: false
+            fields:
+              - { label: "Τίτλος / Motto", name: "aboutTitle", widget: "string" }
+              - { label: "Κείμενο", name: "aboutText", widget: "markdown" }
 
-  # ─── Εταιρία ──────────────────────────────────────────────
+  # ══════════════════════════════════════════════
+  # 🏢 ΕΤΑΙΡΙΑ
+  # ══════════════════════════════════════════════
   - name: "company"
     label: "🏢 Εταιρία"
     files:
@@ -33,10 +48,107 @@ collections:
         fields:
           - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
           - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
-          - { label: "Φιλοσοφία — Τίτλος", name: "philosophyTitle", widget: "string" }
-          - { label: "Φιλοσοφία — Κείμενο", name: "philosophyText", widget: "markdown" }
+          - { label: "Τίτλος Φιλοσοφίας", name: "philosophyTitle", widget: "string" }
+          - { label: "Κείμενο Φιλοσοφίας", name: "philosophyText", widget: "markdown" }
 
-  # ─── Προσφορές ────────────────────────────────────────────
+  # ══════════════════════════════════════════════
+  # 🧹 ΥΠΗΡΕΣΙΕΣ
+  # ══════════════════════════════════════════════
+  - name: "services"
+    label: "🧹 Υπηρεσίες"
+    files:
+
+      - label: "1. Καθαρισμός Χαλιών"
+        name: "katharismos"
+        file: "src/content/pages/katharismos-xaliwn.md"
+        fields:
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Τίτλος Σελίδας (H1)", name: "pageTitle", widget: "string" }
+          - { label: "Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - { label: "Εισαγωγικό Κείμενο", name: "introText", widget: "markdown" }
+          - widget: "object"
+            label: "⚙️ Βήματα Διαδικασίας"
+            name: "steps"
+            collapsed: true
+            fields:
+              - { label: "Βήμα 1 — Σαπούνισμα", name: "step1", widget: "text" }
+              - { label: "Βήμα 2 — Τρίψιμο", name: "step2", widget: "text" }
+              - { label: "Βήμα 3 — Ξέβγαλμα", name: "step3", widget: "text" }
+              - { label: "Βήμα 4 — Καθαρισμός Κροσιών", name: "step4", widget: "text" }
+              - { label: "Βήμα 5 — Στύψιμο", name: "step5", widget: "text" }
+              - { label: "Βήμα 6 — Στέγνωμα", name: "step6", widget: "text" }
+          - widget: "object"
+            label: "🏷️ Τιμολόγιο"
+            name: "pricing"
+            collapsed: false
+            fields:
+              - { label: "Ετικέτα Κάρτας (π.χ. Προσφορά)", name: "badgeLabel", widget: "string", default: "Προσφορά" }
+              - { label: "Τιμή από (€/τ.μ.)", name: "priceFrom", widget: "string", default: "8" }
+              - { label: "Σημείωση ΦΠΑ", name: "priceNote", widget: "string" }
+
+      - label: "2. Φύλαξη Ταπήτων"
+        name: "fylaksi"
+        file: "src/content/pages/fylaksi-tapiton.md"
+        fields:
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Τίτλος Σελίδας (H1)", name: "pageTitle", widget: "string" }
+          - { label: "Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - { label: "Εισαγωγικό Κείμενο", name: "introText", widget: "markdown" }
+          - { label: "Σημείωση Δωρεάν Φύλαξης", name: "freeStorageNote", widget: "text" }
+          - { label: "Σημείωση Μετά 31/12", name: "afterDateNote", widget: "text" }
+
+      - label: "3. Επισκευές Χαλιών"
+        name: "episkeves"
+        file: "src/content/pages/episkeves-xalion.md"
+        fields:
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Τίτλος Σελίδας (H1)", name: "pageTitle", widget: "string" }
+          - { label: "Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - { label: "Εισαγωγικό Κείμενο", name: "introText", widget: "markdown" }
+          - { label: "Λίστα Μηχανοποίητων (μία ανά γραμμή)", name: "machineRepairsList", widget: "markdown" }
+          - { label: "Λίστα Χειροποίητων (μία ανά γραμμή)", name: "handmadeRepairsList", widget: "markdown" }
+
+      - label: "4. Παραλαβή & Παράδοση"
+        name: "paralavi"
+        file: "src/content/pages/paralavi-paradosi.md"
+        fields:
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Τίτλος Σελίδας (H1)", name: "pageTitle", widget: "string" }
+          - { label: "Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - { label: "Εισαγωγικό Κείμενο", name: "introText", widget: "markdown" }
+          - widget: "object"
+            label: "🟢 Υψηλή Κίνηση (Απρ-Δεκ)"
+            name: "highSeason"
+            fields:
+              - { label: "Περίοδος", name: "highSeasonPeriod", widget: "string" }
+              - { label: "Κείμενο", name: "highSeasonText", widget: "text" }
+          - widget: "object"
+            label: "🟡 Χαμηλή Κίνηση (Ιαν-Μαρ)"
+            name: "lowSeason"
+            fields:
+              - { label: "Περίοδος", name: "lowSeasonPeriod", widget: "string" }
+              - { label: "Κείμενο", name: "lowSeasonText", widget: "text" }
+
+      - label: "5. Πλύσιμο Παπλωμάτων & Κουβερτών"
+        name: "paplomata"
+        file: "src/content/pages/plysimo-paplomaton.md"
+        fields:
+          - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
+          - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
+          - { label: "Τίτλος Σελίδας (H1)", name: "pageTitle", widget: "string" }
+          - { label: "Υπότιτλος", name: "heroSubtitle", widget: "text" }
+          - { label: "Εισαγωγικό Κείμενο", name: "introText", widget: "markdown" }
+          - { label: "Δεύτερη Παράγραφος", name: "secondParagraph", widget: "markdown" }
+          - { label: "Τιμή Κουβέρτας (€)", name: "priceBlanket", widget: "string" }
+          - { label: "Τιμή Παπλώματος (€)", name: "priceDuvet", widget: "string" }
+
+  # ══════════════════════════════════════════════
+  # 🏷️ ΠΡΟΣΦΟΡΕΣ
+  # ══════════════════════════════════════════════
   - name: "offers"
     label: "🏷️ Προσφορές"
     files:
@@ -46,23 +158,14 @@ collections:
         fields:
           - { label: "SEO Τίτλος", name: "seoTitle", widget: "string" }
           - { label: "SEO Περιγραφή", name: "seoDescription", widget: "text" }
-          - label: "Τιμή Χαλιών (€/τ.μ.)"
-            name: "priceRug"
-            widget: "string"
-            default: "8"
-          - label: "Τιμή Κουβέρτας (€/τεμ.)"
-            name: "priceBlanket"
-            widget: "string"
-            default: "15"
-          - label: "Τιμή Παπλώματος (€/τεμ.)"
-            name: "priceDuvet"
-            widget: "string"
-            default: "18"
-          - label: "Κείμενο Προσφοράς"
-            name: "offerText"
-            widget: "markdown"
+          - { label: "Τιμή Χαλιών — από (€/τ.μ.)", name: "priceRug", widget: "string" }
+          - { label: "Τιμή Κουβέρτας (€/τεμ.)", name: "priceBlanket", widget: "string" }
+          - { label: "Τιμή Παπλώματος (€/τεμ.)", name: "priceDuvet", widget: "string" }
+          - { label: "Επιπλέον κείμενο προσφορών", name: "offerText", widget: "markdown" }
 
-  # ─── Συχνές Ερωτήσεις ─────────────────────────────────────
+  # ══════════════════════════════════════════════
+  # ❓ ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ
+  # ══════════════════════════════════════════════
   - name: "faq"
     label: "❓ Συχνές Ερωτήσεις"
     folder: "src/content/faq"
@@ -73,21 +176,87 @@ collections:
     fields:
       - { label: "Ερώτηση", name: "question", widget: "string" }
       - { label: "Απάντηση", name: "answer", widget: "markdown" }
-      - { label: "Σειρά (1, 2, 3...)", name: "order", widget: "number", default: 1 }
+      - { label: "Σειρά Εμφάνισης", name: "order", widget: "number", default: 1, value_type: "int" }
 
-  # ─── Εικόνες / Μέσα ──────────────────────────────────────
-  - name: "media_pages"
+  # ══════════════════════════════════════════════
+  # 🖼️ ΕΙΚΟΝΕΣ — LABELED ΑΝΑ ΘΕΣΗ
+  # ══════════════════════════════════════════════
+  - name: "images"
     label: "🖼️ Εικόνες Σελίδων"
     files:
-      - label: "Φωτογραφίες"
-        name: "images"
-        file: "src/content/pages/home.md"
+      - label: "Εικόνες Αρχικής"
+        name: "images_home"
+        file: "src/content/images/home-images.md"
         fields:
-          - label: "Hero Background"
+          - label: "Hero — Φόντο (Αρχική σελίδα, πάνω μέρος)"
             name: "heroImage"
             widget: "image"
+            hint: "Εμφανίζεται ως background στο hero banner της αρχικής. Καλύτερα: οριζόντια εικόνα 1920x600px"
             required: false
-          - label: "About Section Photo"
+          - label: "About Section — Φωτογραφία (δεξί μέρος μετά το hero)"
             name: "aboutImage"
             widget: "image"
+            hint: "Εμφανίζεται στο τετράγωνο δεξιά στην ενότητα 'Είναι καθαρά...'. Τετράγωνη 600x600px"
+            required: false
+          - label: "Πριν & Μετά — Εικόνα Πριν 1"
+            name: "beforeImage1"
+            widget: "image"
+            hint: "Αριστερή εικόνα στο πρώτο ζεύγος Πριν/Μετά. Τετράγωνη 800x800px"
+            required: false
+          - label: "Πριν & Μετά — Εικόνα Μετά 1"
+            name: "afterImage1"
+            widget: "image"
+            hint: "Δεξιά εικόνα στο πρώτο ζεύγος Πριν/Μετά. Τετράγωνη 800x800px"
+            required: false
+          - label: "Πριν & Μετά — Εικόνα Πριν 2"
+            name: "beforeImage2"
+            widget: "image"
+            hint: "Αριστερή εικόνα στο δεύτερο ζεύγος Πριν/Μετά. Τετράγωνη 800x800px"
+            required: false
+          - label: "Πριν & Μετά — Εικόνα Μετά 2"
+            name: "afterImage2"
+            widget: "image"
+            hint: "Δεξιά εικόνα στο δεύτερο ζεύγος Πριν/Μετά. Τετράγωνη 800x800px"
+            required: false
+
+      - label: "Εικόνες Καθαρισμού Χαλιών"
+        name: "images_katharismos"
+        file: "src/content/images/katharismos-images.md"
+        fields:
+          - label: "Hero Banner — Φωτογραφία"
+            name: "heroImage"
+            widget: "image"
+            hint: "Εμφανίζεται ως φόντο στο πάνω μέρος της σελίδας καθαρισμού. 1920x600px"
+            required: false
+          - label: "Γκαλερί Διαδικασίας — Φωτογραφία 1"
+            name: "processImage1"
+            widget: "image"
+            hint: "1η φωτογραφία στη γκαλερί βημάτων καθαρισμού"
+            required: false
+          - label: "Γκαλερί Διαδικασίας — Φωτογραφία 2"
+            name: "processImage2"
+            widget: "image"
+            required: false
+          - label: "Γκαλερί Διαδικασίας — Φωτογραφία 3"
+            name: "processImage3"
+            widget: "image"
+            required: false
+          - label: "Γκαλερί Διαδικασίας — Φωτογραφία 4"
+            name: "processImage4"
+            widget: "image"
+            required: false
+
+      - label: "Εικόνες Εταιρίας"
+        name: "images_company"
+        file: "src/content/images/company-images.md"
+        fields:
+          - label: "Κύρια Φωτογραφία (εμφανίζεται δίπλα στη Φιλοσοφία)"
+            name: "mainImage"
+            widget: "image"
+            hint: "Φωτογραφία του χώρου ή της ομάδας. 700x500px"
+            required: false
+          - label: "TUV Πιστοποιητικό — Εικόνα"
+            name: "tuvImage"
+            widget: "image"
+            hint: "Η σύνθετη εικόνα TUV (logo + πιστοποιητικά). Εμφανίζεται στο TUV section."
             required: false
