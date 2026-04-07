@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const cmsEntry = await getEntry('pages', 'plysimo-paplomaton');
+const cms = (cmsEntry?.data ?? {}) as any;
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -18,23 +22,23 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Πλύσιμο Παπλωμάτων & Κουβερτών | ΔΑΜΙΑΝΟΣ"
-  description="Χειρονακτικός υγρός καθαρισμός παπλωμάτων και κουβερτών χωρίς χημικά. 100% φυσικός καθαρισμός."
+  title={cms.seoTitle || "Πλύσιμο Παπλωμάτων & Κουβερτών | ΔΑΜΙΑΝΟΣ"}
+  description={cms.seoDescription || "Χειρονακτικός υγρός καθαρισμός παπλωμάτων και κουβερτών χωρίς χημικά. 100% φυσικός καθαρισμός."}
   jsonLd={serviceSchema}
 >
 
   <section class="page-hero">
     <div class="container">
       <span class="section-label">Υπηρεσίες</span>
-      <h1 class="page-hero-title">Πλύσιμο Παπλωμάτων & Κουβερτών</h1>
-      <p class="page-hero-subtitle">Χειρονακτικός καθαρισμός χωρίς χημικά — πραγματική φρεσκάδα για τα κλινοσκεπάσματά σας.</p>
+      <h1 class="page-hero-title">{cms.pageTitle || "Πλύσιμο Παπλωμάτων & Κουβερτών"}</h1>
+      <p class="page-hero-subtitle">{cms.heroSubtitle || "Χειρονακτικός καθαρισμός χωρίς χημικά — πραγματική φρεσκάδα για τα κλινοσκεπάσματά σας."}</p>
     </div>
   </section>
 
   <section class="svc-page section-padding">
     <div class="container">
-      <p class="svc-text">Η επιχείρησή μας αναλαμβάνει τον υγρό καθαρισμό των κουβερτών και παπλωμάτων σας. Η διαδικασία γίνεται, όπως και στους τάπητες, αυστηρά με χειρονακτικό τρόπο, απουσία πλυντηρίων και οποιασδήποτε χημικής επεξεργασίας.</p>
-      <p class="svc-text">Αποφεύγονται οσμές του στεγνού καθαρισμού και τα αγαπημένα σας κλινοσκεπάσματα επιστρέφονται σε εσάς και την οικογένειά σας, απολύτως καθαρά και υγιεινά, μυρίζοντας πραγματική φρεσκάδα.</p>
+      <p class="svc-text">{cms.introText || "Η επιχείρησή μας αναλαμβάνει τον υγρό καθαρισμό των κουβερτών και παπλωμάτων σας. Η διαδικασία γίνεται, όπως και στους τάπητες, αυστηρά με χειρονακτικό τρόπο, απουσία πλυντηρίων και οποιασδήποτε χημικής επεξεργασίας."}</p>
+      <p class="svc-text">{cms.secondParagraph || "Αποφεύγονται οσμές του στεγνού καθαρισμού και τα αγαπημένα σας κλινοσκεπάσματα επιστρέφονται σε εσάς και την οικογένειά σας, απολύτως καθαρά και υγιεινά, μυρίζοντας πραγματική φρεσκάδα."}</p>
 
       <div class="svc-features">
         <div class="svc-feature">

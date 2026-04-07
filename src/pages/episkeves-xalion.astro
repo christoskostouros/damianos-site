@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const cmsEntry = await getEntry('pages', 'episkeves-xalion');
+const cms = (cmsEntry?.data ?? {}) as any;
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -18,22 +22,22 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Επισκευές Χαλιών | ΔΑΜΙΑΝΟΣ – Αλλαγή Ρελιών, Κροσιών, Μπαλώματα"
-  description="Κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα και χειροποίητα χαλιά. Αλλαγή ρελιών, κροσιών, κοψίματα, θερμοκόλληση."
+  title={cms.seoTitle || "Επισκευές Χαλιών | ΔΑΜΙΑΝΟΣ – Αλλαγή Ρελιών, Κροσιών, Μπαλώματα"}
+  description={cms.seoDescription || "Κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα και χειροποίητα χαλιά. Αλλαγή ρελιών, κροσιών, κοψίματα, θερμοκόλληση."}
   jsonLd={serviceSchema}
 >
 
   <section class="page-hero">
     <div class="container">
       <span class="section-label">Υπηρεσίες</span>
-      <h1 class="page-hero-title">Επισκευές Χαλιών</h1>
-      <p class="page-hero-subtitle">Αλλαγή ρελιών, κροσιών, μπαλώματα, κοψίματα — για μηχανοποίητα και χειροποίητα χαλιά.</p>
+      <h1 class="page-hero-title">{cms.pageTitle || "Επισκευές Χαλιών"}</h1>
+      <p class="page-hero-subtitle">{cms.heroSubtitle || "Αλλαγή ρελιών, κροσιών, μπαλώματα, κοψίματα — για μηχανοποίητα και χειροποίητα χαλιά."}</p>
     </div>
   </section>
 
   <section class="svc-page section-padding">
     <div class="container">
-      <p class="svc-text">Η επιχείρησή μας αναλαμβάνει κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα χαλιά και μοκέτες.</p>
+      <p class="svc-text">{cms.introText || "Η επιχείρησή μας αναλαμβάνει κάθε είδους επισκευή-επιδιόρθωση σε μηχανοποίητα χαλιά και μοκέτες."}</p>
 
       <h2 class="svc-subtitle">Μηχανοποίητα Χαλιά & Μοκέτες</h2>
       <ul class="svc-list">

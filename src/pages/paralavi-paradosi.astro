@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const cmsEntry = await getEntry('pages', 'paralavi-paradosi');
+const cms = (cmsEntry?.data ?? {}) as any;
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -18,33 +22,33 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Παραλαβή & Παράδοση Χαλιών | ΔΑΜΙΑΝΟΣ – Δωρεάν Μεταφορά Αττική"
-  description="Παραλαβή και παράδοση ταπήτων με ιδιόκτητα μεταφορικά μέσα σε όλο το λεκανοπέδιο Αττικής. Δωρεάν μεταφορά Απρίλιο-Δεκέμβριο."
+  title={cms.seoTitle || "Παραλαβή & Παράδοση Χαλιών | ΔΑΜΙΑΝΟΣ – Δωρεάν Μεταφορά Αττική"}
+  description={cms.seoDescription || "Παραλαβή και παράδοση ταπήτων με ιδιόκτητα μεταφορικά μέσα σε όλο το λεκανοπέδιο Αττικής. Δωρεάν μεταφορά Απρίλιο-Δεκέμβριο."}
   jsonLd={serviceSchema}
 >
 
   <section class="page-hero">
     <div class="container">
       <span class="section-label">Υπηρεσίες</span>
-      <h1 class="page-hero-title">Παραλαβή & Παράδοση</h1>
-      <p class="page-hero-subtitle">Δωρεάν μεταφορά με ιδιόκτητα μέσα σε όλο το λεκανοπέδιο Αττικής.</p>
+      <h1 class="page-hero-title">{cms.pageTitle || "Παραλαβή & Παράδοση"}</h1>
+      <p class="page-hero-subtitle">{cms.heroSubtitle || "Δωρεάν μεταφορά με ιδιόκτητα μέσα σε όλο το λεκανοπέδιο Αττικής."}</p>
     </div>
   </section>
 
   <section class="svc-page section-padding">
     <div class="container">
-      <p class="svc-text">Η παραλαβή και παράδοση των ταπήτων γίνεται με ιδιόκτητα μεταφορικά μέσα, κατόπιν ραντεβού και στο συντομότερο δυνατόν χρόνο από τη στιγμή της ειδοποίησής σας.</p>
+      <p class="svc-text">{cms.introText || "Η παραλαβή και παράδοση των ταπήτων γίνεται με ιδιόκτητα μεταφορικά μέσα, κατόπιν ραντεβού και στο συντομότερο δυνατόν χρόνο από τη στιγμή της ειδοποίησής σας."}</p>
 
       <div class="delivery-grid">
         <div class="delivery-card">
-          <span class="delivery-tag delivery-tag--green">Υψηλή Κίνηση</span>
-          <h4>Απρίλιος – Δεκέμβριος</h4>
-          <p>Δωρεάν μεταφορά με μαζικά δρομολόγια σε όλο το λεκανοπέδιο Αττικής.</p>
+          <span class="delivery-tag delivery-tag--green">{cms.highSeasonTitle || "Υψηλή Κίνηση"}</span>
+          <h4>{cms.highSeasonPeriod || "Απρίλιος – Δεκέμβριος"}</h4>
+          <p>{cms.highSeasonText || "Δωρεάν μεταφορά με μαζικά δρομολόγια σε όλο το λεκανοπέδιο Αττικής."}</p>
         </div>
         <div class="delivery-card">
-          <span class="delivery-tag delivery-tag--muted">Χαμηλή Κίνηση</span>
-          <h4>Ιανουάριος – Μάρτιος</h4>
-          <p>Ενδέχεται να ισχύουν μεταφορικά έξοδα, που ποικίλουν ανάλογα την απόσταση από την έδρα μας.</p>
+          <span class="delivery-tag delivery-tag--muted">{cms.lowSeasonTitle || "Χαμηλή Κίνηση"}</span>
+          <h4>{cms.lowSeasonPeriod || "Ιανουάριος – Μάρτιος"}</h4>
+          <p>{cms.lowSeasonText || "Ενδέχεται να ισχύουν μεταφορικά έξοδα, που ποικίλουν ανάλογα την απόσταση από την έδρα μας."}</p>
         </div>
       </div>
 

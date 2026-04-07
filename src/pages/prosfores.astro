@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const cmsEntry = await getEntry('pages', 'offers');
+const cms = (cmsEntry?.data ?? {}) as any;
 ---
 
 <BaseLayout
-  title="Προσφορές & Τιμές Πλυσίματος Ταπήτων | ΔΑΜΙΑΝΟΣ"
-  description="Τιμές πλυσίματος χαλιών από 8€/τ.μ. Πλύσιμο κουβερτών 15€, παπλωμάτων 18€. Δωρεάν φύλαξη με καθαρισμό. Καλέστε 210 27 76 365."
+  title={cms.seoTitle || "Προσφορές & Τιμές Πλυσίματος Ταπήτων | ΔΑΜΙΑΝΟΣ"}
+  description={cms.seoDescription || "Τιμές πλυσίματος χαλιών από 8€/τ.μ. Πλύσιμο κουβερτών 15€, παπλωμάτων 18€. Δωρεάν φύλαξη με καθαρισμό. Καλέστε 210 27 76 365."}
 >
 
   <!-- Page Hero -->
@@ -28,7 +32,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="pricing-main-desc">Χειρονακτικός υγρός καθαρισμός με παραδοσιακές μεθόδους. Περιλαμβάνει σαπούνισμα, τρίψιμο, ξέβγαλμα, καθαρισμό κροσιών, στύψιμο και στέγνωμα.</p>
           <div class="pricing-main-price">
             <span class="price-from">Από</span>
-            <span class="price-amount">8€</span>
+            <span class="price-amount">{cms.priceRug || "8"}€</span>
             <span class="price-unit">/τ.μ.*</span>
           </div>
           <a href="tel:+302102776365" class="btn btn--primary btn--lg">Καλέστε για Εκτίμηση</a>
@@ -43,7 +47,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="pricing-card-size">Μονή / Διπλή</span>
           </div>
           <div class="pricing-card-price">
-            <span class="price-amount-sm">15€</span>
+            <span class="price-amount-sm">{cms.priceBlanket || "15"}€</span>
             <span class="price-unit-sm">/τεμάχιο + ΦΠΑ</span>
           </div>
           <p>Χειρονακτικός υγρός καθαρισμός χωρίς πλυντήρια και χημικά.</p>
@@ -55,7 +59,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="pricing-card-size">Μονό / Διπλό</span>
           </div>
           <div class="pricing-card-price">
-            <span class="price-amount-sm">18€</span>
+            <span class="price-amount-sm">{cms.priceDuvet || "18"}€</span>
             <span class="price-unit-sm">/τεμάχιο + ΦΠΑ</span>
           </div>
           <p>Επιστρέφεται απολύτως καθαρό, υγιεινό, με πραγματική φρεσκάδα.</p>

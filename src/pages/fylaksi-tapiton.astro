@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const cmsEntry = await getEntry('pages', 'fylaksi-tapiton');
+const cms = (cmsEntry?.data ?? {}) as any;
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -18,28 +22,28 @@ const serviceSchema = {
 ---
 
 <BaseLayout
-  title="Φύλαξη Ταπήτων | ΔΑΜΙΑΝΟΣ – Ασφαλής Αποθήκευση Χαλιών"
-  description="Ασφαλής φύλαξη ταπήτων σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο. Δωρεάν φύλαξη σε συνδυασμό με καθαρισμό."
+  title={cms.seoTitle || "Φύλαξη Ταπήτων | ΔΑΜΙΑΝΟΣ – Ασφαλής Αποθήκευση Χαλιών"}
+  description={cms.seoDescription || "Ασφαλής φύλαξη ταπήτων σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο. Δωρεάν φύλαξη σε συνδυασμό με καθαρισμό."}
   jsonLd={serviceSchema}
 >
 
   <section class="page-hero">
     <div class="container">
       <span class="section-label">Υπηρεσίες</span>
-      <h1 class="page-hero-title">Φύλαξη Ταπήτων</h1>
-      <p class="page-hero-subtitle">Ασφαλής φύλαξη σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο.</p>
+      <h1 class="page-hero-title">{cms.pageTitle || "Φύλαξη Ταπήτων"}</h1>
+      <p class="page-hero-subtitle">{cms.heroSubtitle || "Ασφαλής φύλαξη σε ιδιόκτητες εγκαταστάσεις 800 τ.μ. στο Νέο Ηράκλειο."}</p>
     </div>
   </section>
 
   <section class="svc-page section-padding">
     <div class="container">
-      <p class="svc-text">Η φύλαξη των ταπήτων γίνεται στις σύγχρονες ιδιόκτητες εγκαταστάσεις μας στο Νέο Ηράκλειο. Τα χαλιά είναι απολύτως ασφαλή και φυλάσσονται σε ειδικά ράφια μέσα σε νάιλον θήκη, κάτω από τις καταλληλότερες συνθήκες.</p>
+      <p class="svc-text">{cms.introText || "Η φύλαξη των ταπήτων γίνεται στις σύγχρονες ιδιόκτητες εγκαταστάσεις μας στο Νέο Ηράκλειο. Τα χαλιά είναι απολύτως ασφαλή και φυλάσσονται σε ειδικά ράφια μέσα σε νάιλον θήκη, κάτω από τις καταλληλότερες συνθήκες."}</p>
 
       <div class="svc-highlight">
-        <strong>Δωρεάν φύλαξη</strong> σε συνδυασμό με τον καθαρισμό, μέχρι τις 31 Δεκεμβρίου του έτους που παραδόθηκαν σε εμάς.
+        <strong>Δωρεάν φύλαξη</strong> {cms.freeStorageNote || "σε συνδυασμό με τον καθαρισμό, μέχρι τις 31 Δεκεμβρίου του έτους που παραδόθηκαν σε εμάς."}
       </div>
 
-      <p class="svc-text">Μετά την παρέλευση της συγκεκριμένης ημερομηνίας και την υποχρεωτική εξόφληση του λογαριασμού καθαρισμού τους, υπολογίζονται χρεωστικά φυλάξεως (ισχύουσα τιμή / τετραγωνικό μέτρο + Φ.Π.Α.).</p>
+      <p class="svc-text">{cms.afterDateNote || "Μετά την παρέλευση της συγκεκριμένης ημερομηνίας και την υποχρεωτική εξόφληση του λογαριασμού καθαρισμού τους, υπολογίζονται χρεωστικά φυλάξεως (ισχύουσα τιμή / τετραγωνικό μέτρο + Φ.Π.Α.)."}</p>
 
       <div class="svc-features">
         <div class="svc-feature">

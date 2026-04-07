@@ -1,18 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const cmsEntry = await getEntry('pages', 'company');
+const cms = (cmsEntry?.data ?? {}) as any;
 ---
 
 <BaseLayout
-  title="Η Εταιρία Μας | ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ – Από το 1980"
-  description="45+ χρόνια παράδοσης στο πλύσιμο ταπήτων. Η ιστορία του ΔΑΜΙΑΝΟΣ, η φιλοσοφία μας και η δεύτερη γενιά εξειδίκευσης."
+  title={cms.seoTitle || "Η Εταιρία Μας | ΤΑΠΗΤΟΚΑΘΑΡΙΣΤΗΡΙΑ ΔΑΜΙΑΝΟΣ – Από το 1980"}
+  description={cms.seoDescription || "45+ χρόνια παράδοσης στο πλύσιμο ταπήτων. Η ιστορία του ΔΑΜΙΑΝΟΣ, η φιλοσοφία μας και η δεύτερη γενιά εξειδίκευσης."}
 >
 
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
       <span class="section-label">Η Ιστορία Μας</span>
-      <h1 class="page-hero-title">Μια Ιστορία Εξειδίκευσης<br>και Συνέχειας</h1>
-      <p class="page-hero-subtitle">Από τη Μικρά Ασία στο Νέο Ηράκλειο — δύο γενιές αφοσιωμένες στην τέχνη του πλυσίματος ταπήτων.</p>
+      <h1 class="page-hero-title">{cms.pageTitle || "Μια Ιστορία Εξειδίκευσης και Συνέχειας"}</h1>
+      <p class="page-hero-subtitle">{cms.heroSubtitle || "Από τη Μικρά Ασία στο Νέο Ηράκλειο — δύο γενιές αφοσιωμένες στην τέχνη του πλυσίματος ταπήτων."}</p>
     </div>
   </section>
 
