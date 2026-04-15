@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { title, description, canonical, ogImage = '/images/hero-rug.jpg', jsonLd } = Astro.props;
-const siteUrl = 'https://damianos-site.netlify.app';
+const siteUrl = 'https://plisimotapiton.gr';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = new URL(ogImage, siteUrl).href;
 
