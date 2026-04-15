@@ -106,26 +106,30 @@ const cms = (cmsEntry?.data ?? {}) as any;
       <!-- Pair 1 -->
       <div class="ba-pair reveal">
         <div class="ba-card ba-card--before">
-          <img src="/images/before-1.jpg" alt="Χαλί πριν τον καθαρισμό - λεκέδες και σκόνη" loading="lazy" width="800" height="800">
+          <span class="ba-tag ba-tag--before">ΠΡΙΝ</span>
+          <img src="/images/before-1.jpg" alt="Χαλί πριν τον καθαρισμό" loading="lazy" width="800" height="800">
         </div>
         <div class="ba-arrow">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
         <div class="ba-card ba-card--after">
-          <img src="/images/after-1.jpg" alt="Χαλί μετά τον καθαρισμό - ζωντανά χρώματα" loading="lazy" width="800" height="800">
+          <span class="ba-tag ba-tag--after">ΜΕΤΑ</span>
+          <img src="/images/after-1.jpg" alt="Χαλί μετά τον καθαρισμό" loading="lazy" width="800" height="800">
         </div>
       </div>
 
       <!-- Pair 2 -->
       <div class="ba-pair reveal">
         <div class="ba-card ba-card--before">
-          <img src="/images/before-2.jpg" alt="Φλοράλ χαλί πριν - λεκέδες και φθορά" loading="lazy" width="800" height="800">
+          <span class="ba-tag ba-tag--before">ΠΡΙΝ</span>
+          <img src="/images/before-2.jpg" alt="Περσικό χαλί πριν" loading="lazy" width="800" height="800">
         </div>
         <div class="ba-arrow">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
         <div class="ba-card ba-card--after">
-          <img src="/images/after-2.jpg" alt="Φλοράλ χαλί μετά - λαμπερά χρώματα" loading="lazy" width="800" height="800">
+          <span class="ba-tag ba-tag--after">ΜΕΤΑ</span>
+          <img src="/images/after-2.jpg" alt="Περσικό χαλί μετά" loading="lazy" width="800" height="800">
         </div>
       </div>
     </div>
@@ -681,6 +685,26 @@ const cms = (cmsEntry?.data ?? {}) as any;
     object-fit: cover;
     display: block;
     aspect-ratio: 1;
+  }
+  .ba-tag {
+    position: absolute;
+    top: var(--space-3);
+    padding: var(--space-1) var(--space-4);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    color: #fff;
+    z-index: 2;
+  }
+  .ba-tag--before {
+    left: 0;
+    background: var(--color-primary);
+  }
+  .ba-tag--after {
+    left: 0;
+    background: var(--color-sage);
   }
   .ba-arrow {
     display: flex;
